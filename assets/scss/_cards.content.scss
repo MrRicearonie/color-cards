@@ -14,7 +14,7 @@
     /* Create the container for the cards to go into that is on the bottom. Center
         the cards */
     .color-card-container {
-        height: 14rem;
+        height: 3rem;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -23,7 +23,7 @@
         position: fixed;
         bottom: 0;
         left: 0;
-        overflow-y: hidden;
+        // overflow-y: hidden;
     }
     
     // Set up the cards based on what color they correlate to
@@ -49,13 +49,13 @@
     
     // Show the whole card if hovered, if not just show the color
     .colorCard:hover {
-        transform: translateY(1rem);
+        transform: translateY(-10rem);
         box-shadow: 0 0 5px gray;
     }
     
-    .down {
-        transform: translateY(11rem);
-    }
+    // .down {
+    //     transform: translateY(11rem);
+    // }
     
     // Animate a button when it is clicked
     // For the top part of the button

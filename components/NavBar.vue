@@ -25,10 +25,10 @@
     @import '../assets/scss/settings.variables';
 
     template {
-        background-color: $color1;
+        background: $color1;
     }
 
     .navbar {
-        background-color: $color1;
+        background: $color1;
     }
 </style>
