@@ -1,0 +1,64 @@
+/* Set up the cards based on the color provided */
+@mixin colorCard($color) {
+    height: 13rem;
+    width: 10rem;
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.5s;
+    p {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Color is the top part of the card that will be visible when the card 
+        is down. We want this to be the color provided */
+    .color {
+        height: 4rem;
+        width: 100%;
+        background-color: $color;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    // The part of the card under the color
+    .color-card-content {
+        height: 100%;
+        margin-top: 0;
+        border-left: 2px solid whitesmoke;
+        border-right: 2px solid whitesmoke;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* This is the top part of the button. This is what the user will see
+        before the user clicks in */
+    .button-top {
+        width: 100%;
+        height: 100%;
+        color: white;
+        background-color: $card-btn-top;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        cursor: pointer;
+        user-select: none;    
+    }
+
+    /* This is the bottom part of the button. When the user clicks in the
+        button, this will show behind the top part. It will be colored the same
+        as the color on top */
+    .button-bottom {
+        width: 75%;
+        height: 2rem;
+        background-color: $color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5% 0;
+        border-radius: 16px;
+    }
+}

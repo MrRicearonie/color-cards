@@ -1,0 +1,122 @@
+/* This is the scss for the container of the cards, the cards' animation, and
+    to get the cards setup process started */
+
+    @import 'settings.variables';
+    @import 'card.content';
+    
+    // import and set font
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&display=swap');
+    
+    body {
+        font-family: 'Noto Sans', sans-serif;
+    }
+    
+    /* Create the container for the cards to go into that is on the bottom. Center
+        the cards */
+    .color-card-container {
+        height: 14rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        overflow-y: hidden;
+    }
+    
+    // Set up the cards based on what color they correlate to
+    #card1 {
+        @include colorCard ($color1);
+    }
+    
+    #card2 {
+        @include colorCard ($color2);
+    }
+    
+    #card3 {
+        @include colorCard ($color3);
+    }
+    
+    #card4 {
+        @include colorCard ($color4);
+    }
+    
+    #card5 {
+        @include colorCard ($color5);
+    }
+    
+    // Show the whole card if hovered, if not just show the color
+    .colorCard:hover {
+        transform: translateY(1rem);
+        box-shadow: 0 0 5px gray;
+    }
+    
+    .down {
+        transform: translateY(11rem);
+    }
+    
+    // Animate a button when it is clicked
+    // For the top part of the button
+    @keyframes click-ani-top {
+        30% {
+            transform: scale(100%);
+        }
+        100% {
+            transform: scale(90%);
+        }
+    }
+    
+    @keyframes unclicked-ani-top {
+        0% {
+            transform: scale(90%);        
+        }
+        70% {
+            transform: scale(100%);
+        }
+        100% {
+            transform: scale(100%);
+        }
+    }
+    
+    // For the bottom part of the button
+    @keyframes click-ani-bottom {
+        20% {
+            transform: scale(105%);
+        }
+        100% {
+            transform: scale(105%);
+        }
+    }
+    
+    @keyframes unclicked-ani-bottom {
+        0% {
+            transform: scale(105%);
+        }
+        50% {
+            transform: scale(105%);
+        }
+        100% {
+            transform: scale(100%);
+        }
+    }
+    
+    /* Turns out that this part cannot be placed in the mixin or the active
+        animation won't work, strange */
+    .button-top {
+        animation: unclicked-ani-top 400ms forwards;
+    }
+    
+    .button-top:active {
+        animation: click-ani-top 400ms forwards;
+    }
+    
+    .button-bottom {
+        animation: unclicked-ani-bottom 400ms forwards;
+    }
+    
+    .button-bottom:active {
+        animation: click-ani-bottom 400ms forwards;
+    }
+    

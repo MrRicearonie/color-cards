@@ -1,0 +1,68 @@
+@import 'settings.variables';
+@import 'cards.content';
+
+// Define variable defaults
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+}
+
+#app {
+    margin: 0;
+}
+
+.btnContainer {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    column-gap: 7.5%;
+}
+
+.text-color1 {
+    color: $color1;
+}
+
+.text-color2 {
+    color: $color2;
+}
+
+.text-color3 {
+    color: $color3;
+}
+
+.text-color4 {
+    color: $color4;
+}
+
+.text-color5 {
+    color: $color5;
+}
+
+.color1 {
+    background-color: $color1;
+    border-color: $color1;
+}
+
+.color2 {
+    background-color: $color2;
+    border-color: $color2;
+}
+
+.color3 {
+    background-color: $color3;
+    border-color: $color3;
+}
+
+.color4 {
+    background-color: $color4;
+    border-color: $color4;
+}
+
+.color5 {
+    background-color: $color5;
+    border-color: $color5;
+}
