@@ -1,5 +1,5 @@
 /* Set up the cards based on the color provided */
-@mixin colorCard($color) {
+@mixin colorCard() {
     height: 13rem;
     width: 10rem;
     border: 1px solid whitesmoke;
@@ -17,7 +17,6 @@
     .color {
         height: 4rem;
         width: 100%;
-        background-color: $color;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
@@ -54,7 +53,6 @@
     .button-bottom {
         width: 75%;
         height: 2rem;
-        background-color: $color;
         display: flex;
         align-items: center;
         justify-content: center;

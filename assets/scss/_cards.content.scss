@@ -28,23 +28,23 @@
     
     // Set up the cards based on what color they correlate to
     #card1 {
-        @include colorCard ($color1);
+        @include colorCard ();
     }
     
     #card2 {
-        @include colorCard ($color2);
+        @include colorCard ();
     }
     
     #card3 {
-        @include colorCard ($color3);
+        @include colorCard ();
     }
     
     #card4 {
-        @include colorCard ($color4);
+        @include colorCard ();
     }
     
     #card5 {
-        @include colorCard ($color5);
+        @include colorCard ();
     }
     
     // Show the whole card if hovered, if not just show the color

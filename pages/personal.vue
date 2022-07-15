@@ -1,20 +1,22 @@
 <!-- Used to be called GridContent -->
 <template>
-    <div class="background">
+    <div class="background_color1">
         <b-container class="full-height">
             <b-row class="full-height">
                 <b-col cols="12" md="5" lg="4" xl="3" class="photo-container">
-                    <b-img :src="img" :alt="imgAlt" fluid rounded="circle" class="person" />
+                    <div class="img-background background_color2">
+                        <b-img :src="img" :alt="imgAlt" fluid rounded="circle" />
+                    </div>
                 </b-col>
                 <b-col cols="12" md="7" lg="8" xl="9" class="text-container">
                     <div class="text-center my-5">
-                        <h1 class="display-4 text-color4">{{ pageWelcome }} <span class="text-color5">{{ name }}</span></h1>
+                        <h1 class="display-4 text_color4">{{ pageWelcome }} <span class="text_color5">{{ name }}</span></h1>
                     </div>
                     <p>{{ welcomeText }}</p>
-                    <h2 class="text-color5">{{ about }}</h2>
+                    <h2 class="text_color5">{{ about }}</h2>
                     <p>{{ aboutText }}</p>
                     <p>{{ aboutText2 }}</p>
-                    <h2 class="text-color5">{{ contact }}</h2>
+                    <h2 class="text_color5">{{ contact }}</h2>
                 </b-col>
             </b-row>
         </b-container>
@@ -46,12 +48,13 @@
         color: $textlight
     }
 
-    .background {
-        background: $color1;
-    }
-
     .full-height {
         min-height: 100vh;
+    }
+
+    .img-background {
+        padding: 5px;
+        border-radius: 100%;
     }
 
     .photo-container {
@@ -59,10 +62,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .person {
-        box-shadow: 0px 0px 0px 5px $color2;
     }
 
     $breakpoint-tablet: 768px;
