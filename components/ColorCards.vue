@@ -55,7 +55,7 @@
             <div class="button-bottom background_color5">
                 <div class="button-top copy">Copy</div>
             </div>
-            <div class="button-bottom background_color5">
+            <div class="button-bottom background_color5" @click="getColors()">
                 <div class="button-top lock">Lock</div>
             </div>
             </div>
@@ -64,25 +64,12 @@
 </template>
 
 <script>
-    import axios from "axios"
+    // import axios from "axios"
+    import { colorMixin } from "../assets/mixins/colors.js";
 
-    export default {};
-    var url = "http://colormind.io/api/";
-    var data = {
-        model : "default",
-        input : [[44,43,44],[90,83,82],"N","N","N"]
-    }
-
-    axios({
-        method: 'post',
-        url: url,
-        data: JSON.stringify(data)
-    })
-    .then((response) => {
-        console.log(response.data);
-    }, (error) => {
-        console.log(error);
-    });
+    export default {
+        mixins: [colorMixin],
+    };
 </script>
 
 <style lang="scss">

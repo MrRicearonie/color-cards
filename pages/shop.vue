@@ -36,8 +36,9 @@
 
 <script>
     import ShoppingCard from "../components/ShoppingCards";
-
+    import { colorMixin } from "../assets/mixins/colors.js";
     export default {
+        mixins: [colorMixin],
         components: { ShoppingCard },
         data: () => {
             return {
@@ -161,6 +162,9 @@
                 ]
             };
         },
+        mounted () {
+            this.refresh();
+        }
     };
 </script>
 

@@ -24,7 +24,9 @@
 
 <script>
     import BlogPost from "../components/BlogPosts";
+    import { colorMixin } from "../assets/mixins/colors.js";
     export default {
+        mixins: [colorMixin],
         components: { BlogPost },
         data() {
             return {
@@ -68,6 +70,9 @@
                     }
                 ],
             }
+        },
+        mounted () {
+            this.refresh();
         }
     }
 </script>

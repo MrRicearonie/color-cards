@@ -24,21 +24,26 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        pageWelcome: "Hello There! I'm ",
-        name: "Chris",
-        welcomeText: "This is where some welcome text can go before the meat of the page. Like a slogan or a motto",
-        about: "About Me",
-        aboutText: "Here is the spot for text about yourself. This could mention your hobbies, skills, interests, etc. I'm not just going to keep filling up this text box to give you space for your content. So, how's it going? Good? Bad? Whatever it is, I hope finding your next color palette will make it better! Wow, I still have some space, so let's see. How about them Yankees? They're a sports team. Uhhh, yeah, I've got nothing. Why are you still reading this? It's just filler text, your not supposed to be intrested in it. It's just here to take up space. Could I have done some Lorum Ipson text instead of this? Yes. But where is the fun in that? Alright, I think this is enough text. Have a good rest of your day!",
-        aboutText2: "Wait, there still more text to go? Hopefully not that much. Just enough to create another line? Yes? Well that's good. Alright, goodbye for real this time. Next up, contact logos. Time for the land of email, LinkedIn, GitHub, Twitter, and Dribble!",
-        contact: "Contact Me",
-        img: require('@/assets/SquareMe.jpg'),
-        imgAlt: "A photo of Chris"
-      }
+    import { colorMixin } from "../assets/mixins/colors.js";
+    export default {
+        mixins: [colorMixin],
+        data() {
+            return {
+            pageWelcome: "Hello There! I'm ",
+            name: "Chris",
+            welcomeText: "This is where some welcome text can go before the meat of the page. Like a slogan or a motto",
+            about: "About Me",
+            aboutText: "Here is the spot for text about yourself. This could mention your hobbies, skills, interests, etc. I'm not just going to keep filling up this text box to give you space for your content. So, how's it going? Good? Bad? Whatever it is, I hope finding your next color palette will make it better! Wow, I still have some space, so let's see. How about them Yankees? They're a sports team. Uhhh, yeah, I've got nothing. Why are you still reading this? It's just filler text, your not supposed to be intrested in it. It's just here to take up space. Could I have done some Lorum Ipson text instead of this? Yes. But where is the fun in that? Alright, I think this is enough text. Have a good rest of your day!",
+            aboutText2: "Wait, there still more text to go? Hopefully not that much. Just enough to create another line? Yes? Well that's good. Alright, goodbye for real this time. Next up, contact logos. Time for the land of email, LinkedIn, GitHub, Twitter, and Dribble!",
+            contact: "Contact Me",
+            img: require('@/assets/SquareMe.jpg'),
+            imgAlt: "A photo of Chris"
+            }
+        },
+        mounted () {
+            this.refresh();
+        }
     }
-  }
 </script>
 
 <style scoped lang="scss">
