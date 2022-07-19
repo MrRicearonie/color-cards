@@ -31,7 +31,7 @@
                 headerText: "Hello, ",
                 colorText: "Colors!",
                 leadText: "Welcome to the best way to find a color palette for your next site!",
-                jumbotronText: "At a lost for what colors to use for your site, or already have some in mind but need some complimentary colors for them? Color Cards is here to help! Based on your color choices, the site will generate a complementary palette and show you examples on how they will look on a webpage. Let's get started by choosing what type of site you are going to be building.",
+                jumbotronText: "At a lost for what colors to use for your site, or already have some in mind but need some complimentary colors for them? Color Cards is here to help! Based on your color choices, the site will generate a complementary palette and show you examples on how they will look on a webpage using Huemint's api. Let's get started by choosing what type of site you are going to be building.",
                 btnPersonal: "Personal Site",
                 btnShop: "Shop",
                 btnBlog: "Blog",

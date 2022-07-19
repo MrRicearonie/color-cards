@@ -12,10 +12,10 @@
                     <div class="text-center my-5">
                         <h1 class="display-4 text_color4">{{ pageWelcome }} <span class="text_color5">{{ name }}</span></h1>
                     </div>
-                    <p>{{ welcomeText }}</p>
+                    <p class="primary_text_color1">{{ welcomeText }}</p>
                     <h2 class="text_color5">{{ about }}</h2>
-                    <p>{{ aboutText }}</p>
-                    <p>{{ aboutText2 }}</p>
+                    <p class="primary_text_color1">{{ aboutText }}</p>
+                    <p class="primary_text_color1">{{ aboutText2 }}</p>
                     <h2 class="text_color5">{{ contact }}</h2>
                 </b-col>
             </b-row>
