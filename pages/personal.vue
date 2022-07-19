@@ -4,19 +4,19 @@
         <b-container class="full-height">
             <b-row class="full-height">
                 <b-col cols="12" md="5" lg="4" xl="3" class="photo-container">
-                    <div class="img-background background_color2">
+                    <div class="img-background background_color5">
                         <b-img :src="img" :alt="imgAlt" fluid rounded="circle" />
                     </div>
                 </b-col>
                 <b-col cols="12" md="7" lg="8" xl="9" class="text-container">
                     <div class="text-center my-5">
-                        <h1 class="display-4 text_color4">{{ pageWelcome }} <span class="text_color5">{{ name }}</span></h1>
+                        <h1 class="display-4 text_color4">{{ pageWelcome }} <span class="text_color2">{{ name }}</span></h1>
                     </div>
                     <p class="primary_text_color1">{{ welcomeText }}</p>
-                    <h2 class="text_color5">{{ about }}</h2>
+                    <h2 class="text_color2">{{ about }}</h2>
                     <p class="primary_text_color1">{{ aboutText }}</p>
                     <p class="primary_text_color1">{{ aboutText2 }}</p>
-                    <h2 class="text_color5">{{ contact }}</h2>
+                    <h2 class="text_color2">{{ contact }}</h2>
                 </b-col>
             </b-row>
         </b-container>

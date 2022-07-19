@@ -1,24 +1,24 @@
 <template>
-    <div>
+    <div class="background_color1">
         <!-- Create the jumbotron -->
-        <b-jumbotron header-level="3" variant="text-center rounded-lg">
+        <b-jumbotron header-level="3" variant="text-center rounded-lg" class="background_color2">
             <template #header>{{ headerText }}<span class="text_color4">{{ colorText }}</span></template>
-            <template #lead>{{ leadText}} </template>
+            <template #lead class="text_color4">{{ leadText}} </template>
             <hr class="my-4 color5">
-            <p>{{ jumbotronText }}</p>
+            <p class="primary_text_color2">{{ jumbotronText }}</p>
             <div class="btnContainer">
                 <!-- <b-button size="lg" href="#" class="homeBtn text_color1 border_color1" id="button-1" @mouseover="hover1 = true" @mouseleave="hover1 = false" :class="{ background_color1: hover1 }" @click="btnClicked = !btnClicked">{{ btnPersonal }}</b-button> -->
-                <a id="button-1" role="button" tabindex="0" href="#" target="_self" class="btn homeBtn text_color1 border_color1 btn-lg" @mouseover="hover1 = true" @mouseleave="hover1 = false" :class="{ background_color1: hover1, background_transparent: !hover1 }" @click="btnClicked = !btnClicked">{{ btnPersonal }}</a>
-                <a id="button-2" role="button" tabindex="0" href="#" target="_self" class="btn homeBtn text_color2 border_color2 btn-lg" @mouseover="hover2 = true" @mouseleave="hover2 = false" :class="{ background_color2: hover2, background_transparent: !hover2 }" @click="btnClicked = !btnClicked">{{ btnShop }}</a>
-                <a id="button-3" role="button" tabindex="0" href="#" target="_self" class="btn homeBtn text_color3 border_color3 btn-lg" @mouseover="hover3 = true" @mouseleave="hover3 = false" :class="{ background_color3: hover3, background_transparent: !hover3 }" @click="btnClicked = !btnClicked">{{ btnBlog }}</a>
+                <a id="button-1" role="button" tabindex="0" href="#" target="_self" class="btn homeBtn text_color3 border_color3 btn-lg" @mouseover="hover1 = true" @mouseleave="hover1 = false" :class="{ background_color1: hover1, background_transparent: !hover1 }" @click="btnClicked = !btnClicked">{{ btnPersonal }}</a>
+                <a id="button-2" role="button" tabindex="0" href="#" target="_self" class="btn homeBtn text_color4 border_color4 btn-lg" @mouseover="hover2 = true" @mouseleave="hover2 = false" :class="{ background_color2: hover2, background_transparent: !hover2 }" @click="btnClicked = !btnClicked">{{ btnShop }}</a>
+                <a id="button-3" role="button" tabindex="0" href="#" target="_self" class="btn homeBtn text_color5 border_color5 btn-lg" @mouseover="hover3 = true" @mouseleave="hover3 = false" :class="{ background_color3: hover3, background_transparent: !hover3 }" @click="btnClicked = !btnClicked">{{ btnBlog }}</a>
             </div>
         </b-jumbotron>
         <!-- Show an alert if the user clicks the button -->
         <b-alert show variant="danger" v-if = "btnClicked">{{ alert }}</b-alert>
         <p v-else>{{ placeholder }}</p>
-        <b-tooltip target="button-1" placement="bottom">{{ tooltipText }} <span class="text_color1">{{ colorText }}</span></b-tooltip>
-        <b-tooltip target="button-2" placement="bottom">{{ tooltipText }} <span class="text_color2">{{ colorText }}</span></b-tooltip>
-        <b-tooltip target="button-3" placement="bottom">{{ tooltipText }} <span class="text_color3">{{ colorText }}</span></b-tooltip>
+        <b-tooltip target="button-1" placement="bottom">{{ tooltipText }} <span class="text_color3">{{ colorText }}</span></b-tooltip>
+        <b-tooltip target="button-2" placement="bottom">{{ tooltipText }} <span class="text_color4">{{ colorText }}</span></b-tooltip>
+        <b-tooltip target="button-3" placement="bottom">{{ tooltipText }} <span class="text_color5">{{ colorText }}</span></b-tooltip>
     </div>
 </template>
 

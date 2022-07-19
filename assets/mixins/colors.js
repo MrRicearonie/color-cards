@@ -14,7 +14,8 @@ var customConfig = {
         'Content-Type': 'application/json'
     }
 };
-var results = [];
+var results = ["", "", "", "", ""];
+var locked = [false, false, false, false, false];
 
 // Use the color provided to set the colors on the correct DOM elements
 function setColor(color, pos) {
@@ -81,17 +82,24 @@ function textColor(color, pos) {
     }
 }
 
-// navHome.onmouseenter = function() {
-//     navHome.style.color = navTextColorHover;
-// };
-// navHome.onmouseleave = function () {
-//     navHome.style.color = navTextColor;
-// };
-
+// functions that will be availble from outside
 export const colorMixin = {
     methods: {
         // Get colors from Huemint and the set the colors on the site
         getColors() {
+
+            // Create the palette to send over
+            for (let i = 0; i < 5; i++) {
+                if (locked[i]) {
+                    data.palette[i] = results[i];
+                } else {
+                    data.palette[i] = "-";
+                }
+            }
+
+            console.log(results);
+            console.log(data.palette);
+
             axios.post(url, JSON.stringify(data), customConfig).then((response) => {
                 results = response.data.results[0].palette;
                 console.log(results);
@@ -107,6 +115,13 @@ export const colorMixin = {
             for (var i in results) {
                 setColor(results[i], i);
             }
+        },
+        // Lock or unlock the selected color in the palette
+        lock(pos) {
+            var card = document.getElementById("card"+pos);
+            pos--;
+            (locked[pos]) ? locked[pos] = false : locked[pos] = true;
+            console.log("Pos: " + locked[pos]);
         }
     }
 }

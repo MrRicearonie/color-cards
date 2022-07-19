@@ -7,7 +7,7 @@
             <div class="button-bottom background_color1">
                 <div class="button-top copy">Copy</div>
             </div>
-            <div class="button-bottom background_color1">
+            <div class="button-bottom background_color1" @click="lock(1)">
                 <div class="button-top lock">Lock</div>
             </div>
             </div>
@@ -19,7 +19,7 @@
             <div class="button-bottom background_color2">
                 <div class="button-top copy">Copy</div>
             </div>
-            <div class="button-bottom background_color2">
+            <div class="button-bottom background_color2" @click="lock(2)">
                 <div class="button-top lock">Lock</div>
             </div>
             </div>
@@ -31,7 +31,7 @@
             <div class="button-bottom background_color3">
                 <div class="button-top copy">Copy</div>
             </div>
-            <div class="button-bottom background_color3">
+            <div class="button-bottom background_color3" @click="lock(3)">
                 <div class="button-top lock">Lock</div>
             </div>
             </div>
@@ -43,7 +43,7 @@
             <div class="button-bottom background_color4">
                 <div class="button-top copy">Copy</div>
             </div>
-            <div class="button-bottom background_color4">
+            <div class="button-bottom background_color4" @click="lock(4)">
                 <div class="button-top lock">Lock</div>
             </div>
             </div>
