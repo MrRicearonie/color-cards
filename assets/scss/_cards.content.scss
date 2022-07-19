@@ -119,4 +119,20 @@
     .button-bottom:active {
         animation: click-ani-bottom 400ms forwards;
     }
+
+    .locked-top {
+        animation: click-ani-top 400ms forwards;
+    }
+
+    .locked-bottom {
+        animation: click-ani-bottom 400ms forwards;
+    }
+
+    .unlocked-top {
+        animation: unclicked-ani-top 400ms forwards;
+    }
+
+    .unlocked-bottom {
+        animation: unclicked-ani-bottom 400ms forwards;
+    }
     

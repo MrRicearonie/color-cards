@@ -7,8 +7,8 @@
             <div class="button-bottom background_color1">
                 <div class="button-top copy">Copy</div>
             </div>
-            <div class="button-bottom background_color1" @click="lock(1)">
-                <div class="button-top lock">Lock</div>
+            <div id="lock-btn-bottom1" class="unlocked-bottom button-bottom lock-bottom" @click="lock(1)">
+                <div id="lock-btn-top1" class="unlocked-top button-top lock">Lock</div>
             </div>
             </div>
         </section>
@@ -19,8 +19,8 @@
             <div class="button-bottom background_color2">
                 <div class="button-top copy">Copy</div>
             </div>
-            <div class="button-bottom background_color2" @click="lock(2)">
-                <div class="button-top lock">Lock</div>
+            <div id="lock-btn-bottom2" class="unlocked-bottom button-bottom lock-bottom" @click="lock(2)">
+                <div id="lock-btn-top2" class="unlocked-top button-top lock">Lock</div>
             </div>
             </div>
         </section>
@@ -31,8 +31,8 @@
             <div class="button-bottom background_color3">
                 <div class="button-top copy">Copy</div>
             </div>
-            <div class="button-bottom background_color3" @click="lock(3)">
-                <div class="button-top lock">Lock</div>
+            <div id="lock-btn-bottom3" class="unlocked-bottom button-bottom lock-bottom" @click="lock(3)">
+                <div id="lock-btn-top3" class="unlocked-top button-top lock">Lock</div>
             </div>
             </div>
         </section>
@@ -43,8 +43,8 @@
             <div class="button-bottom background_color4">
                 <div class="button-top copy">Copy</div>
             </div>
-            <div class="button-bottom background_color4" @click="lock(4)">
-                <div class="button-top lock">Lock</div>
+            <div id="lock-btn-bottom4" class="unlocked-bottom button-bottom lock-bottom" @click="lock(4)">
+                <div id="lock-btn-top4" class="unlocked-top button-top lock">Lock</div>
             </div>
             </div>
         </section>
@@ -55,8 +55,8 @@
             <div class="button-bottom background_color5">
                 <div class="button-top copy">Copy</div>
             </div>
-            <div class="button-bottom background_color5" @click="getColors()">
-                <div class="button-top lock">Lock</div>
+            <div id="lock-btn-bottom5" class="unlocked-bottom button-bottom lock-bottom" @click="getColors()">
+                <div id="lock-btn-top5" class="unlocked-top button-top lock">Lock</div>
             </div>
             </div>
         </section>

@@ -118,10 +118,22 @@ export const colorMixin = {
         },
         // Lock or unlock the selected color in the palette
         lock(pos) {
-            var card = document.getElementById("card"+pos);
+            var btnTop = document.getElementById("lock-btn-top"+pos);
+            var btnBottom = document.getElementById("lock-btn-bottom"+pos);
             pos--;
             (locked[pos]) ? locked[pos] = false : locked[pos] = true;
             console.log("Pos: " + locked[pos]);
+            if (locked[pos]) {
+                btnTop.classList.add('locked-top');
+                btnTop.classList.remove('unlocked-top');
+                btnBottom.classList.add('locked-bottom');
+                btnBottom.classList.remove('unlocked-bottom');
+            } else {
+                btnTop.classList.add('unlocked-top');
+                btnTop.classList.remove('locked-top');
+                btnBottom.classList.add('unlocked-bottom');
+                btnBottom.classList.remove('locked-bottom');
+            }
         }
     }
 }
