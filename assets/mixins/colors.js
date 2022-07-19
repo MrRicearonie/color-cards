@@ -14,7 +14,7 @@ var customConfig = {
         'Content-Type': 'application/json'
     }
 };
-var results = ["", "", "", "", ""];
+var results = ["#11323b", "#266363", "#444543", "#d1b47c", "#dfd8b3"];
 var locked = [false, false, false, false, false];
 
 // Use the color provided to set the colors on the correct DOM elements
