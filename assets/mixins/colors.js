@@ -110,7 +110,9 @@ function changeHex(cardNum) {
         if (hex.length == 6) {
             results[cardNum] = "#"+hex;
             setColor("#"+hex, cardNum);
-            lockCard(cardNum+1);
+            if (!locked[cardNum]) {
+                lockCard(cardNum+1);
+            }
             card.blur();
         }
     //If inputted text uses invalid chars or is 7, then set the innerText back
