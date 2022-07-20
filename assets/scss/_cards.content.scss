@@ -53,9 +53,45 @@
         box-shadow: 0 0 5px gray;
     }
     
-    // .down {
-    //     transform: translateY(11rem);
-    // }
+    .color-button-container {
+        height: 4rem;
+        width: 12rem;
+        background-color: gray;
+        position:fixed;
+        bottom: 8rem;
+        right: -10rem;
+        border: solid white 2px ;
+        border-radius: 16px;
+        display: flex;
+        color: white;
+        align-items: center;
+        transition: all 0.5s;
+        box-shadow: 0 0 5px gray;
+    }
+
+    .color-button-container:hover, .color-button-container:active, .color-button-container:focus {
+        transform: translateX(-8rem);
+    }
+
+    .arrow {
+        margin: 0;
+        margin-left: 4px;
+        font-size: 2rem;
+        cursor:default;
+    }
+
+    .gen-btn {
+        width: 7rem;
+        margin: 0 0.5rem;
+        padding: 0.5rem 0;
+        border: solid 2px white;
+        border-radius: 16px;
+        cursor: pointer;
+    }
+
+    .gen-btn:hover {
+        background-color: rgb(70, 70, 70);
+    }
     
     // Animate a button when it is clicked
     // For the top part of the button

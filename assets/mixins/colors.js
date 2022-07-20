@@ -116,7 +116,7 @@ function changeHex(cardNum) {
             card.blur();
         }
     //If inputted text uses invalid chars or is 7, then set the innerText back
-    } else {
+    } else if (hex.length != 0) {
         card.blur();
         card.value = hexes[cardNum-1];
         console.log(hexes);

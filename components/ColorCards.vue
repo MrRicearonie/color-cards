@@ -1,65 +1,71 @@
 <template>
-    <div class="color-card-container">
-        <section class="colorCard down" id="card1">
-            <div class="color background_color1"></div>
-            <div class="color-card-content">
-            <p class="hex">#<input id="hex_card1" type="text" v-model="hex1" /></p>
-            <div class="button-bottom button-bottom-ani background_color1">
-                <div class="button-top button-top-ani copy">Copy</div>
-            </div>
-            <div id="lock-btn-bottom1" class="unlocked-bottom button-bottom lock-bottom" @click="lock(1)">
-                <div id="lock-btn-top1" class="unlocked-top button-top lock">Lock</div>
-            </div>
-            </div>
-        </section>
-        <section class="colorCard down" id="card2">
-            <div class="color background_color2"></div>
-            <div class="color-card-content">
-            <p class="hex">#<input id="hex_card2" type="text" v-model="hex2" /></p>
-            <div class="button-bottom button-bottom-ani background_color2">
-                <div class="button-top button-top-ani copy">Copy</div>
-            </div>
-            <div id="lock-btn-bottom2" class="unlocked-bottom button-bottom lock-bottom" @click="lock(2)">
-                <div id="lock-btn-top2" class="unlocked-top button-top lock">Lock</div>
-            </div>
-            </div>
-        </section>
-        <section class="colorCard down" id="card3">
-            <div class="color background_color3"></div>
-            <div class="color-card-content">
-            <p class="hex">#<input id="hex_card3" type="text" v-model="hex3" /></p>
-            <div class="button-bottom button-bottom-ani background_color3">
-                <div class="button-top button-top-ani copy">Copy</div>
-            </div>
-            <div id="lock-btn-bottom3" class="unlocked-bottom button-bottom lock-bottom" @click="lock(3)">
-                <div id="lock-btn-top3" class="unlocked-top button-top lock">Lock</div>
-            </div>
-            </div>
-        </section>
-        <section class="colorCard down" id="card4">
-            <div class="color background_color4"></div>
-            <div class="color-card-content">
-            <p class="hex">#<input id="hex_card4" type="text" v-model="hex4" /></p>
-            <div class="button-bottom button-bottom-ani background_color4">
-                <div class="button-top button-top-ani copy">Copy</div>
-            </div>
-            <div id="lock-btn-bottom4" class="unlocked-bottom button-bottom lock-bottom" @click="lock(4)">
-                <div id="lock-btn-top4" class="unlocked-top button-top lock">Lock</div>
-            </div>
-            </div>
-        </section>
-        <section class="colorCard down" id="card5">
-            <div class="color background_color5"></div>
-            <div class="color-card-content">
-            <p class="hex">#<input id="hex_card5" type="text" v-model="hex5" /></p>
-            <div class="button-bottom button-bottom-ani background_color5">
-                <div class="button-top button-top-ani copy">Copy</div>
-            </div>
-            <div id="lock-btn-bottom5" class="unlocked-bottom button-bottom lock-bottom" @click="getColors()">
-                <div id="lock-btn-top5" class="unlocked-top button-top lock">Lock</div>
-            </div>
-            </div>
-        </section>
+    <div>
+        <div class="color-card-container">
+            <section class="colorCard down" id="card1">
+                <div class="color background_color1"></div>
+                <div class="color-card-content">
+                <p class="hex">#<input id="hex_card1" type="text" v-model="hex1" /></p>
+                <div class="button-bottom button-bottom-ani background_color1">
+                    <div class="button-top button-top-ani copy">Copy</div>
+                </div>
+                <div id="lock-btn-bottom1" class="unlocked-bottom button-bottom lock-bottom" @click="lock(1)">
+                    <div id="lock-btn-top1" class="unlocked-top button-top lock">Lock</div>
+                </div>
+                </div>
+            </section>
+            <section class="colorCard down" id="card2">
+                <div class="color background_color2"></div>
+                <div class="color-card-content">
+                <p class="hex">#<input id="hex_card2" type="text" v-model="hex2" /></p>
+                <div class="button-bottom button-bottom-ani background_color2">
+                    <div class="button-top button-top-ani copy">Copy</div>
+                </div>
+                <div id="lock-btn-bottom2" class="unlocked-bottom button-bottom lock-bottom" @click="lock(2)">
+                    <div id="lock-btn-top2" class="unlocked-top button-top lock">Lock</div>
+                </div>
+                </div>
+            </section>
+            <section class="colorCard down" id="card3">
+                <div class="color background_color3"></div>
+                <div class="color-card-content">
+                <p class="hex">#<input id="hex_card3" type="text" v-model="hex3" /></p>
+                <div class="button-bottom button-bottom-ani background_color3">
+                    <div class="button-top button-top-ani copy">Copy</div>
+                </div>
+                <div id="lock-btn-bottom3" class="unlocked-bottom button-bottom lock-bottom" @click="lock(3)">
+                    <div id="lock-btn-top3" class="unlocked-top button-top lock">Lock</div>
+                </div>
+                </div>
+            </section>
+            <section class="colorCard down" id="card4">
+                <div class="color background_color4"></div>
+                <div class="color-card-content">
+                <p class="hex">#<input id="hex_card4" type="text" v-model="hex4" /></p>
+                <div class="button-bottom button-bottom-ani background_color4">
+                    <div class="button-top button-top-ani copy">Copy</div>
+                </div>
+                <div id="lock-btn-bottom4" class="unlocked-bottom button-bottom lock-bottom" @click="lock(4)">
+                    <div id="lock-btn-top4" class="unlocked-top button-top lock">Lock</div>
+                </div>
+                </div>
+            </section>
+            <section class="colorCard down" id="card5">
+                <div class="color background_color5"></div>
+                <div class="color-card-content">
+                <p class="hex">#<input id="hex_card5" type="text" v-model="hex5" /></p>
+                <div class="button-bottom button-bottom-ani background_color5">
+                    <div class="button-top button-top-ani copy">Copy</div>
+                </div>
+                <div id="lock-btn-bottom5" class="unlocked-bottom button-bottom lock-bottom" @click="lock(5)">
+                    <div id="lock-btn-top5" class="unlocked-top button-top lock">Lock</div>
+                </div>
+                </div>
+            </section>
+        </div>
+        <div class="color-button-container">
+            <p class="arrow">&lt</p>
+            <div class="gen-btn" @click="getColors()">Generate</div>
+        </div>
     </div>
 </template>
 
