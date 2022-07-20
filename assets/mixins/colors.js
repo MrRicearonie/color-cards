@@ -1,5 +1,13 @@
 import axios from "axios";
 
+// Variables to hold the hex on each card
+var hexes = ['11323b', '266363', '444543', 'd1b47c', 'dfd8b3'];
+
+// The current pallete and which ones we like
+var results = ["#11323b", "#266363", "#444543", "#d1b47c", "#dfd8b3"];
+var locked = [false, false, false, false, false];
+
+// Stuff to call the api with
 var url = "https://api.huemint.com/color";
 var data = {
     "mode":"transformer", // transformer, diffusion or random
@@ -14,8 +22,6 @@ var customConfig = {
         'Content-Type': 'application/json'
     }
 };
-var results = ["#11323b", "#266363", "#444543", "#d1b47c", "#dfd8b3"];
-var locked = [false, false, false, false, false];
 
 // Use the color provided to set the colors on the correct DOM elements
 function setColor(color, pos) {
@@ -23,6 +29,8 @@ function setColor(color, pos) {
     var backgrounds = document.getElementsByClassName("background_color"+pos);
     var text = document.getElementsByClassName("text_color"+pos);
     var borders = document.getElementsByClassName("border_color"+pos);
+    var cardText = document.getElementById("hex_card"+pos);
+    console.log("hex_card"+pos);
 
     // Set the background color
     for (var i in backgrounds) {
@@ -44,6 +52,10 @@ function setColor(color, pos) {
             borders[i].style.borderColor = color;
         }
     }
+
+    // Change text in card to new hex value
+    cardText.value = color.substring(1, color.lenght);
+    hexes[pos-1] = color.substring(1, color.lenght);
 
     textColor(color, pos);
 }
@@ -82,6 +94,57 @@ function textColor(color, pos) {
     }
 }
 
+// ------------- Stuff to do when the user changes the hex value --------------
+function changeHex(cardNum) {
+    // This var is set up to check each letter in the inputted hex to see if its valid
+    var hexTest = /^([0-9A-F]{1}){1,6}$/i;
+    var card = document.getElementById("hex_card"+cardNum);
+    var hex = card.value;
+    cardNum--;
+
+    // If inputted text uses valid hex chars and is 0-6 in length, continue
+    if (hexTest.test(hex) && hex.length < 7) {
+        hexes[cardNum] = hex;
+
+        // If text length is 6, update the color and lock
+        if (hex.length == 6) {
+            results[cardNum] = "#"+hex;
+            setColor("#"+hex, cardNum);
+            lockCard(cardNum+1);
+            card.blur();
+        }
+    //If inputted text uses invalid chars or is 7, then set the innerText back
+    } else {
+        card.blur();
+        card.value = hexes[cardNum-1];
+        console.log(hexes);
+        // clearSelection();
+    }
+
+    console.log(card.value);
+}
+
+// Lock the card provided
+function lockCard(card) {
+    console.log("Card inputted: "+card);
+    var btnTop = document.getElementById("lock-btn-top"+card);
+    var btnBottom = document.getElementById("lock-btn-bottom"+card);
+    card--;
+    (locked[card]) ? locked[card] = false : locked[card] = true;
+    if (locked[card]) {
+        btnTop.classList.add('locked-top');
+        btnTop.classList.remove('unlocked-top');
+        btnBottom.classList.add('locked-bottom');
+        btnBottom.classList.remove('unlocked-bottom');
+    } else {
+        btnTop.classList.add('unlocked-top');
+        btnTop.classList.remove('locked-top');
+        btnBottom.classList.add('unlocked-bottom');
+        btnBottom.classList.remove('locked-bottom');
+    }
+}
+
+
 // functions that will be availble from outside
 export const colorMixin = {
     methods: {
@@ -118,21 +181,11 @@ export const colorMixin = {
         },
         // Lock or unlock the selected color in the palette
         lock(pos) {
-            var btnTop = document.getElementById("lock-btn-top"+pos);
-            var btnBottom = document.getElementById("lock-btn-bottom"+pos);
-            pos--;
-            (locked[pos]) ? locked[pos] = false : locked[pos] = true;
-            if (locked[pos]) {
-                btnTop.classList.add('locked-top');
-                btnTop.classList.remove('unlocked-top');
-                btnBottom.classList.add('locked-bottom');
-                btnBottom.classList.remove('unlocked-bottom');
-            } else {
-                btnTop.classList.add('unlocked-top');
-                btnTop.classList.remove('locked-top');
-                btnBottom.classList.add('unlocked-bottom');
-                btnBottom.classList.remove('locked-bottom');
-            }
+            lockCard(pos);
+        },
+        // When someone edits the hex, run some checks and set it if right
+        hexChange(card) {
+            changeHex(card);
         }
     }
 }
