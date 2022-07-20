@@ -122,7 +122,6 @@ export const colorMixin = {
             var btnBottom = document.getElementById("lock-btn-bottom"+pos);
             pos--;
             (locked[pos]) ? locked[pos] = false : locked[pos] = true;
-            console.log("Pos: " + locked[pos]);
             if (locked[pos]) {
                 btnTop.classList.add('locked-top');
                 btnTop.classList.remove('unlocked-top');

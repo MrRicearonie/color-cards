@@ -8,9 +8,9 @@
                 <!-- Add the router links -->
                 <b-navbar-nav>
                     <nuxt-link to="/" class="nav-link">Home</nuxt-link>
-                    <nuxt-link to="/personal" class="nav-link">Personal (Grid)</nuxt-link>
-                    <nuxt-link to="/shop" class="nav-link">Shop (Images)</nuxt-link>
-                    <nuxt-link to="/blog" class="nav-link">Blog (Accordion)</nuxt-link>
+                    <nuxt-link to="/personal" class="nav-link">Personal</nuxt-link>
+                    <nuxt-link to="/shop" class="nav-link">Shop</nuxt-link>
+                    <nuxt-link to="/blog" class="nav-link">Blog</nuxt-link>
                 </b-navbar-nav>
             </b-collapse>
         </b-container>

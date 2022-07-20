@@ -104,19 +104,19 @@
     
     /* Turns out that this part cannot be placed in the mixin or the active
         animation won't work, strange */
-    .button-top {
+    .button-top-ani {
         animation: unclicked-ani-top 400ms forwards;
     }
     
-    .button-top:active {
+    .button-top-ani:active {
         animation: click-ani-top 400ms forwards;
     }
     
-    .button-bottom {
+    .button-bottom-ani {
         animation: unclicked-ani-bottom 400ms forwards;
     }
     
-    .button-bottom:active {
+    .button-bottom-ani:active {
         animation: click-ani-bottom 400ms forwards;
     }
 
