@@ -48,7 +48,7 @@ body {
 }
 
 // Show the whole card if hovered, if not just show the color
-.colorCard:hover, .colorCard:active, .colorCard:focus {
+.show-card {
     transform: translateY(-10rem);
     box-shadow: 0 0 5px gray;
 }
@@ -69,7 +69,7 @@ body {
     box-shadow: 0 0 5px gray;
 }
 
-.color-button-container:hover, .color-button-container:active, .color-button-container:focus {
+.show-color-button-container {
     transform: translateX(-8rem);
 }
 

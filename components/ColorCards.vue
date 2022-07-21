@@ -62,7 +62,7 @@
                 </div>
             </section>
         </div>
-        <div class="color-button-container">
+        <div id="gen-container" class="color-button-container">
             <p class="arrow">&lt</p>
             <div class="gen-btn" @click="getColors()">Generate</div>
         </div>
@@ -85,6 +85,65 @@
                 hex4: 'd1b47c',
                 hex5: 'dfd8b3',
             }
+        }, mounted() {
+            var currentCard = '';
+            var card1 = document.getElementById('card1');
+            var card2 = document.getElementById('card2');
+            var card3 = document.getElementById('card3');
+            var card4 = document.getElementById('card4');
+            var card5 = document.getElementById('card5');
+            var gen = document.getElementById('gen-container');
+
+            // When the user clicks on the screen, close card if one is open
+            window.addEventListener('click', function(e){
+                if (currentCard != '' && !document.getElementById(currentCard).contains(e.target)){
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                    currentCard = '';
+                }
+            });
+
+            // Open the card if clicked
+            card1.addEventListener('click', function() {
+                 if (currentCard != '') {
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                }
+                currentCard = 'card1';
+                document.getElementById(currentCard).classList.add('show-card');
+            })
+            card2.addEventListener('click', function() {
+                 if (currentCard != '') {
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                }
+                currentCard = 'card2';
+                document.getElementById(currentCard).classList.add('show-card');
+            })
+            card3.addEventListener('click', function() {
+                 if (currentCard != '') {
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                }
+                currentCard = 'card3';
+                document.getElementById(currentCard).classList.add('show-card');
+            })
+            card4.addEventListener('click', function() {
+                 if (currentCard != '') {
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                }
+                currentCard = 'card4';
+                document.getElementById(currentCard).classList.add('show-card');
+            })
+            card5.addEventListener('click', function() {
+                 if (currentCard != '') {
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                }
+                currentCard = 'card5';
+                document.getElementById(currentCard).classList.add('show-card');
+            })
+            gen.addEventListener('click', function() {
+                if (currentCard != '') document.getElementById(currentCard).classList.remove('show-card');
+
+                currentCard = 'gen-container';
+                gen.classList.add('show-color-button-container');
+            })
         },
         watch: {
             'hex1': function() {
