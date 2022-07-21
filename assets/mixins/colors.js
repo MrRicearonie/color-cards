@@ -188,6 +188,19 @@ export const colorMixin = {
         // When someone edits the hex, run some checks and set it if right
         hexChange(card) {
             changeHex(card);
+        },
+        // Copy the selected hex value to the user's clipboard
+        toClipboard(card) {
+            navigator.clipboard.writeText(results[card-1]);
+
+            // Get the snackbar DIV
+            var toast = document.getElementById("copy_toast");
+
+            // Add the "show" class to DIV
+            toast.classList.add("show");
+
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function(){ toast.classList.remove("show"); }, 2000);
         }
     }
 }

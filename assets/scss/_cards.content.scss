@@ -1,174 +1,217 @@
 /* This is the scss for the container of the cards, the cards' animation, and
     to get the cards setup process started */
 
-    @import 'settings.variables';
-    @import 'card.content';
-    
-    // import and set font
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&display=swap');
-    
-    body {
-        font-family: 'Noto Sans', sans-serif;
-    }
-    
-    /* Create the container for the cards to go into that is on the bottom. Center
-        the cards */
-    .color-card-container {
-        height: 3rem;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 1rem;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        // overflow-y: hidden;
-    }
-    
-    // Set up the cards based on what color they correlate to
-    #card1 {
-        @include colorCard ();
-    }
-    
-    #card2 {
-        @include colorCard ();
-    }
-    
-    #card3 {
-        @include colorCard ();
-    }
-    
-    #card4 {
-        @include colorCard ();
-    }
-    
-    #card5 {
-        @include colorCard ();
-    }
-    
-    // Show the whole card if hovered, if not just show the color
-    .colorCard:hover, .colorCard:active, .colorCard:focus {
-        transform: translateY(-10rem);
-        box-shadow: 0 0 5px gray;
-    }
-    
-    .color-button-container {
-        height: 4rem;
-        width: 12rem;
-        background-color: gray;
-        position:fixed;
-        bottom: 8rem;
-        right: -10rem;
-        border: solid white 2px ;
-        border-radius: 16px;
-        display: flex;
-        color: white;
-        align-items: center;
-        transition: all 0.5s;
-        box-shadow: 0 0 5px gray;
-    }
+@import 'settings.variables';
+@import 'card.content';
 
-    .color-button-container:hover, .color-button-container:active, .color-button-container:focus {
-        transform: translateX(-8rem);
-    }
+// import and set font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&display=swap');
 
-    .arrow {
-        margin: 0;
-        margin-left: 4px;
-        font-size: 2rem;
-        cursor:default;
-    }
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
 
-    .gen-btn {
-        width: 7rem;
-        margin: 0 0.5rem;
-        padding: 0.5rem 0;
-        border: solid 2px white;
-        border-radius: 16px;
-        cursor: pointer;
-    }
+/* Create the container for the cards to go into that is on the bottom. Center
+    the cards */
+.color-card-container {
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    // overflow-y: hidden;
+}
 
-    .gen-btn:hover {
-        background-color: rgb(70, 70, 70);
-    }
-    
-    // Animate a button when it is clicked
-    // For the top part of the button
-    @keyframes click-ani-top {
-        30% {
-            transform: scale(100%);
-        }
-        100% {
-            transform: scale(90%);
-        }
-    }
-    
-    @keyframes unclicked-ani-top {
-        0% {
-            transform: scale(90%);        
-        }
-        70% {
-            transform: scale(100%);
-        }
-        100% {
-            transform: scale(100%);
-        }
-    }
-    
-    // For the bottom part of the button
-    @keyframes click-ani-bottom {
-        20% {
-            transform: scale(105%);
-        }
-        100% {
-            transform: scale(105%);
-        }
-    }
-    
-    @keyframes unclicked-ani-bottom {
-        0% {
-            transform: scale(105%);
-        }
-        50% {
-            transform: scale(105%);
-        }
-        100% {
-            transform: scale(100%);
-        }
-    }
-    
-    /* Turns out that this part cannot be placed in the mixin or the active
-        animation won't work, strange */
-    .button-top-ani {
-        animation: unclicked-ani-top 400ms forwards;
-    }
-    
-    .button-top-ani:active {
-        animation: click-ani-top 400ms forwards;
-    }
-    
-    .button-bottom-ani {
-        animation: unclicked-ani-bottom 400ms forwards;
-    }
-    
-    .button-bottom-ani:active {
-        animation: click-ani-bottom 400ms forwards;
-    }
+// Set up the cards based on what color they correlate to
+#card1 {
+    @include colorCard ();
+}
 
-    .locked-top {
-        animation: click-ani-top 400ms forwards;
-    }
+#card2 {
+    @include colorCard ();
+}
 
-    .locked-bottom {
-        animation: click-ani-bottom 400ms forwards;
-    }
+#card3 {
+    @include colorCard ();
+}
 
-    .unlocked-top {
-        animation: unclicked-ani-top 400ms forwards;
-    }
+#card4 {
+    @include colorCard ();
+}
 
-    .unlocked-bottom {
-        animation: unclicked-ani-bottom 400ms forwards;
+#card5 {
+    @include colorCard ();
+}
+
+// Show the whole card if hovered, if not just show the color
+.colorCard:hover, .colorCard:active, .colorCard:focus {
+    transform: translateY(-10rem);
+    box-shadow: 0 0 5px gray;
+}
+
+.color-button-container {
+    height: 4rem;
+    width: 12rem;
+    background-color: gray;
+    position:fixed;
+    bottom: 8rem;
+    right: -10rem;
+    border: solid white 2px ;
+    border-radius: 16px;
+    display: flex;
+    color: white;
+    align-items: center;
+    transition: all 0.5s;
+    box-shadow: 0 0 5px gray;
+}
+
+.color-button-container:hover, .color-button-container:active, .color-button-container:focus {
+    transform: translateX(-8rem);
+}
+
+.arrow {
+    margin: 0;
+    margin-left: 4px;
+    font-size: 2rem;
+    cursor:default;
+}
+
+.gen-btn {
+    width: 7rem;
+    margin: 0 0.5rem;
+    padding: 0.5rem 0;
+    border: solid 2px white;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.gen-btn:hover {
+    background-color: rgb(70, 70, 70);
+}
+
+// Animate a button when it is clicked
+// For the top part of the button
+@keyframes click-ani-top {
+    30% {
+        transform: scale(100%);
     }
-    
+    100% {
+        transform: scale(90%);
+    }
+}
+
+@keyframes unclicked-ani-top {
+    0% {
+        transform: scale(90%);        
+    }
+    70% {
+        transform: scale(100%);
+    }
+    100% {
+        transform: scale(100%);
+    }
+}
+
+// For the bottom part of the button
+@keyframes click-ani-bottom {
+    20% {
+        transform: scale(105%);
+    }
+    100% {
+        transform: scale(105%);
+    }
+}
+
+@keyframes unclicked-ani-bottom {
+    0% {
+        transform: scale(105%);
+    }
+    50% {
+        transform: scale(105%);
+    }
+    100% {
+        transform: scale(100%);
+    }
+}
+
+/* Turns out that this part cannot be placed in the mixin or the active
+    animation won't work, strange */
+.button-top-ani {
+    animation: unclicked-ani-top 400ms forwards;
+}
+
+.button-top-ani:active {
+    animation: click-ani-top 400ms forwards;
+}
+
+.button-bottom-ani {
+    animation: unclicked-ani-bottom 400ms forwards;
+}
+
+.button-bottom-ani:active {
+    animation: click-ani-bottom 400ms forwards;
+}
+
+.locked-top {
+    animation: click-ani-top 400ms forwards;
+}
+
+.locked-bottom {
+    animation: click-ani-bottom 400ms forwards;
+}
+
+.unlocked-top {
+    animation: unclicked-ani-top 400ms forwards;
+}
+
+.unlocked-bottom {
+    animation: unclicked-ani-bottom 400ms forwards;
+}
+
+// For the toast message when hex value copied to clipboard
+#copy_toast {
+    visibility: hidden;
+    min-width: 300px;
+    margin-left: -150px; 
+    background-color: #333;
+    color: whitesmoke;
+    text-align: center;
+    border-radius: 10px;
+    padding: 16px; 
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 6rem;
+}
+
+#copy_toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 1.5s;
+    animation: fadein 0.5s, fadeout 0.5s 1.5s;
+}
+
+/* Animations to fade the toast in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 6rem; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 6rem; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 6rem; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 6rem; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+  

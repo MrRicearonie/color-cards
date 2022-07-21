@@ -5,7 +5,7 @@
                 <div class="color background_color1"></div>
                 <div class="color-card-content">
                 <p class="hex">#<input id="hex_card1" type="text" v-model="hex1" /></p>
-                <div class="button-bottom button-bottom-ani background_color1">
+                <div class="button-bottom button-bottom-ani background_color1" @click="toClipboard(1)">
                     <div class="button-top button-top-ani copy">Copy</div>
                 </div>
                 <div id="lock-btn-bottom1" class="unlocked-bottom button-bottom lock-bottom" @click="lock(1)">
@@ -17,7 +17,7 @@
                 <div class="color background_color2"></div>
                 <div class="color-card-content">
                 <p class="hex">#<input id="hex_card2" type="text" v-model="hex2" /></p>
-                <div class="button-bottom button-bottom-ani background_color2">
+                <div class="button-bottom button-bottom-ani background_color2" @click="toClipboard(2)">
                     <div class="button-top button-top-ani copy">Copy</div>
                 </div>
                 <div id="lock-btn-bottom2" class="unlocked-bottom button-bottom lock-bottom" @click="lock(2)">
@@ -29,7 +29,7 @@
                 <div class="color background_color3"></div>
                 <div class="color-card-content">
                 <p class="hex">#<input id="hex_card3" type="text" v-model="hex3" /></p>
-                <div class="button-bottom button-bottom-ani background_color3">
+                <div class="button-bottom button-bottom-ani background_color3" @click="toClipboard(3)">
                     <div class="button-top button-top-ani copy">Copy</div>
                 </div>
                 <div id="lock-btn-bottom3" class="unlocked-bottom button-bottom lock-bottom" @click="lock(3)">
@@ -41,7 +41,7 @@
                 <div class="color background_color4"></div>
                 <div class="color-card-content">
                 <p class="hex">#<input id="hex_card4" type="text" v-model="hex4" /></p>
-                <div class="button-bottom button-bottom-ani background_color4">
+                <div class="button-bottom button-bottom-ani background_color4" @click="toClipboard(4)">
                     <div class="button-top button-top-ani copy">Copy</div>
                 </div>
                 <div id="lock-btn-bottom4" class="unlocked-bottom button-bottom lock-bottom" @click="lock(4)">
@@ -53,7 +53,7 @@
                 <div class="color background_color5"></div>
                 <div class="color-card-content">
                 <p class="hex">#<input id="hex_card5" type="text" v-model="hex5" /></p>
-                <div class="button-bottom button-bottom-ani background_color5">
+                <div class="button-bottom button-bottom-ani background_color5" @click="toClipboard(5)">
                     <div class="button-top button-top-ani copy">Copy</div>
                 </div>
                 <div id="lock-btn-bottom5" class="unlocked-bottom button-bottom lock-bottom" @click="lock(5)">
@@ -65,6 +65,9 @@
         <div class="color-button-container">
             <p class="arrow">&lt</p>
             <div class="gen-btn" @click="getColors()">Generate</div>
+        </div>
+        <div id="copy_toast">
+            Hex value copied to clipboard
         </div>
     </div>
 </template>
