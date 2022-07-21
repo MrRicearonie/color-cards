@@ -87,11 +87,6 @@
             }
         }, mounted() {
             var currentCard = '';
-            var card1 = document.getElementById('card1');
-            var card2 = document.getElementById('card2');
-            var card3 = document.getElementById('card3');
-            var card4 = document.getElementById('card4');
-            var card5 = document.getElementById('card5');
             var gen = document.getElementById('gen-container');
             var arrow = document.getElementById('arrow-gen');
             var backgrounds = document.querySelectorAll('.card-background');
@@ -104,57 +99,22 @@
                 }
             });
 
-            // Open the card if clicked
-            card1.addEventListener('click', function() {
-                 if (currentCard != '') {
-                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
-                }
-                currentCard = 'card1';
-                document.getElementById(currentCard).classList.add('show-card');
-            })
-            card2.addEventListener('click', function() {
-                 if (currentCard != '') {
-                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
-                }
-                currentCard = 'card2';
-                document.getElementById(currentCard).classList.add('show-card');
-            })
-            card3.addEventListener('click', function() {
-                 if (currentCard != '') {
-                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
-                }
-                currentCard = 'card3';
-                document.getElementById(currentCard).classList.add('show-card');
-            })
-            card4.addEventListener('click', function() {
-                 if (currentCard != '') {
-                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
-                }
-                currentCard = 'card4';
-                document.getElementById(currentCard).classList.add('show-card');
-            })
-            card5.addEventListener('click', function() {
-                 if (currentCard != '') {
-                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
-                }
-                currentCard = 'card5';
-                document.getElementById(currentCard).classList.add('show-card');
-            })
+            // Open the geration button if clicked
             gen.addEventListener('click', function() {
                 if (currentCard != 'gen-container') {
                     if (currentCard != '') document.getElementById(currentCard).classList.remove('show-card');
     
-                    console.log('PooPoo: '+currentCard)
                     currentCard = 'gen-container';
                     gen.classList.add('show-color-button-container');
                     arrow.classList.add('arrow-flip');
                 }
             })
+
+            // When someone clicks the arrow when the generate button is out, close it
             arrow.addEventListener('click', function() {
-                console.log(currentCard)
                 if (currentCard == 'gen-container') {
+                    // Have to time this out breifly to get it it the right order of execution to work
                     setTimeout(() => {
-                        console.log('peepee')
                         gen.classList.remove('show-color-button-container'); 
                         arrow.classList.remove('arrow-flip');
                         currentCard = '';
@@ -162,13 +122,24 @@
                 }
             })
 
+            // When someone clicks on the color card, open or close it
             for (const background of backgrounds) {
                 background.addEventListener('click', function handleClick(event) {
-                    if (currentCard == event.target.parentNode.id) {
-                        setTimeout(() => {
-                            (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
-                            currentCard = '';
-                        }, "1")
+
+                    // Get the card id
+                    var parent = event.target.parentNode.id;
+
+                    // If there is a card open (or the generate button), close it
+                    if (currentCard != '') {
+                        (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
+                    }
+
+                    // If the currentCard is the parent, set it to nothing, else open the parent card
+                    if (currentCard == parent) {
+                        currentCard = '';
+                    } else {
+                        currentCard = parent;
+                        document.getElementById(currentCard).classList.add('show-card');
                     }
                 });
             };
