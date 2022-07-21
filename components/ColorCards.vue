@@ -2,7 +2,7 @@
     <div>
         <div class="color-card-container">
             <section class="colorCard down" id="card1">
-                <div class="color background_color1"></div>
+                <div class="color background_color1 card-background"></div>
                 <div class="color-card-content">
                 <p class="hex">#<input id="hex_card1" type="text" v-model="hex1" /></p>
                 <div class="button-bottom button-bottom-ani background_color1" @click="toClipboard(1)">
@@ -14,7 +14,7 @@
                 </div>
             </section>
             <section class="colorCard down" id="card2">
-                <div class="color background_color2"></div>
+                <div class="color background_color2 card-background"></div>
                 <div class="color-card-content">
                 <p class="hex">#<input id="hex_card2" type="text" v-model="hex2" /></p>
                 <div class="button-bottom button-bottom-ani background_color2" @click="toClipboard(2)">
@@ -26,7 +26,7 @@
                 </div>
             </section>
             <section class="colorCard down" id="card3">
-                <div class="color background_color3"></div>
+                <div class="color background_color3 card-background"></div>
                 <div class="color-card-content">
                 <p class="hex">#<input id="hex_card3" type="text" v-model="hex3" /></p>
                 <div class="button-bottom button-bottom-ani background_color3" @click="toClipboard(3)">
@@ -38,7 +38,7 @@
                 </div>
             </section>
             <section class="colorCard down" id="card4">
-                <div class="color background_color4"></div>
+                <div class="color background_color4 card-background"></div>
                 <div class="color-card-content">
                 <p class="hex">#<input id="hex_card4" type="text" v-model="hex4" /></p>
                 <div class="button-bottom button-bottom-ani background_color4" @click="toClipboard(4)">
@@ -50,7 +50,7 @@
                 </div>
             </section>
             <section class="colorCard down" id="card5">
-                <div class="color background_color5"></div>
+                <div class="color background_color5 card-background"></div>
                 <div class="color-card-content">
                 <p class="hex">#<input id="hex_card5" type="text" v-model="hex5" /></p>
                 <div class="button-bottom button-bottom-ani background_color5" @click="toClipboard(5)">
@@ -63,7 +63,7 @@
             </section>
         </div>
         <div id="gen-container" class="color-button-container">
-            <p class="arrow">&lt</p>
+            <p id="arrow-gen" class="arrow">&lt</p>
             <div class="gen-btn" @click="getColors()">Generate</div>
         </div>
         <div id="copy_toast">
@@ -93,11 +93,13 @@
             var card4 = document.getElementById('card4');
             var card5 = document.getElementById('card5');
             var gen = document.getElementById('gen-container');
+            var arrow = document.getElementById('arrow-gen');
+            var backgrounds = document.querySelectorAll('.card-background');
 
             // When the user clicks on the screen, close card if one is open
             window.addEventListener('click', function(e){
                 if (currentCard != '' && !document.getElementById(currentCard).contains(e.target)){
-                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
                     currentCard = '';
                 }
             });
@@ -105,45 +107,71 @@
             // Open the card if clicked
             card1.addEventListener('click', function() {
                  if (currentCard != '') {
-                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
                 }
                 currentCard = 'card1';
                 document.getElementById(currentCard).classList.add('show-card');
             })
             card2.addEventListener('click', function() {
                  if (currentCard != '') {
-                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
                 }
                 currentCard = 'card2';
                 document.getElementById(currentCard).classList.add('show-card');
             })
             card3.addEventListener('click', function() {
                  if (currentCard != '') {
-                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
                 }
                 currentCard = 'card3';
                 document.getElementById(currentCard).classList.add('show-card');
             })
             card4.addEventListener('click', function() {
                  if (currentCard != '') {
-                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
                 }
                 currentCard = 'card4';
                 document.getElementById(currentCard).classList.add('show-card');
             })
             card5.addEventListener('click', function() {
                  if (currentCard != '') {
-                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container');
+                    (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
                 }
                 currentCard = 'card5';
                 document.getElementById(currentCard).classList.add('show-card');
             })
             gen.addEventListener('click', function() {
-                if (currentCard != '') document.getElementById(currentCard).classList.remove('show-card');
-
-                currentCard = 'gen-container';
-                gen.classList.add('show-color-button-container');
+                if (currentCard != 'gen-container') {
+                    if (currentCard != '') document.getElementById(currentCard).classList.remove('show-card');
+    
+                    console.log('PooPoo: '+currentCard)
+                    currentCard = 'gen-container';
+                    gen.classList.add('show-color-button-container');
+                    arrow.classList.add('arrow-flip');
+                }
             })
+            arrow.addEventListener('click', function() {
+                console.log(currentCard)
+                if (currentCard == 'gen-container') {
+                    setTimeout(() => {
+                        console.log('peepee')
+                        gen.classList.remove('show-color-button-container'); 
+                        arrow.classList.remove('arrow-flip');
+                        currentCard = '';
+                    }, "1")
+                }
+            })
+
+            for (const background of backgrounds) {
+                background.addEventListener('click', function handleClick(event) {
+                    if (currentCard == event.target.parentNode.id) {
+                        setTimeout(() => {
+                            (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
+                            currentCard = '';
+                        }, "1")
+                    }
+                });
+            };
         },
         watch: {
             'hex1': function() {

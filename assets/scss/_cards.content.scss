@@ -78,6 +78,11 @@ body {
     margin-left: 4px;
     font-size: 2rem;
     cursor:default;
+    transition: all 0.5s;
+}
+
+.arrow-flip {
+    transform: rotate(180deg);
 }
 
 .gen-btn {
