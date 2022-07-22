@@ -6,6 +6,7 @@
             <template #lead class="text_color4">{{ leadText}} </template>
             <hr class="my-4 color5">
             <p class="primary_text_color2">{{ jumbotronText }}</p>
+            <p class="primary_text_color2">{{ jumbotronText2 }}</p>
             <div class="btnContainer">
                 <nuxt-link to="/personal" id="button-1" role="button" tabindex="0" class="nav-link btn homeBtn text_color3 border_color3 btn-lg" @mouseover.native="btnHovered('button-1', '3')" @mouseleave.native="btnUnhovered('button-1')">{{ btnPersonal }}</nuxt-link>
                 <nuxt-link to="/shop" id="button-2" role="button" tabindex="0" class="nav-link btn homeBtn text_color4 border_color4 btn-lg" @mouseover.native="btnHovered('button-2', '4')" @mouseleave.native="btnUnhovered('button-2')">{{ btnShop }}</nuxt-link>
@@ -25,6 +26,7 @@
                 colorText: "Colors!",
                 leadText: "Welcome to the best way to find a color palette for your next site!",
                 jumbotronText: "At a lost for what colors to use for your site, or already have some in mind but need some complimentary colors for them? Color Cards is here to help! Based on your color choices, the site will generate a complementary palette and show you examples on how they will look on a webpage using Huemint's api. Let's get started by choosing what type of site you are going to be building.",
+                jumbotronText2: "Click on the color card to show the hex value, set your own color, copy the color to your clipboard, or to lock that color in for the next color palette.",
                 btnPersonal: "Personal Site",
                 btnShop: "Shop",
                 btnBlog: "Blog",
