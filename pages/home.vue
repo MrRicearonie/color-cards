@@ -26,7 +26,7 @@
                 colorText: "Colors!",
                 leadText: "Welcome to the best way to find a color palette for your next site!",
                 jumbotronText: "At a lost for what colors to use for your site, or already have some in mind but need some complimentary colors for them? Color Cards is here to help! Based on your color choices, the site will generate a complementary palette and show you examples on how they will look on a webpage using Huemint's api. Let's get started by choosing what type of site you are going to be building.",
-                jumbotronText2: "Click on the color card to show the hex value, set your own color, copy the color to your clipboard, or to lock that color in for the next color palette.",
+                jumbotronText2: "Click on the color card to show the hex value, set your own color, copy the color to your clipboard, or to lock that color in for the next color palette. The arrow to the right will allow you to generate the color palette, and on mobile, the arrow to the left will show you the cards.",
                 btnPersonal: "Personal Site",
                 btnShop: "Shop",
                 btnBlog: "Blog",
