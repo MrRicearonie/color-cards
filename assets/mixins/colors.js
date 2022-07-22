@@ -1,4 +1,10 @@
+// Christopher Rempe, 2022
+// JS for everything about the color change
 import axios from "axios";
+
+
+// <----------- Variables ----------->
+
 
 // Variables to hold the hex on each card
 var hexes = ['11323b', '266363', '444543', 'd1b47c', 'dfd8b3'];
@@ -22,6 +28,10 @@ var customConfig = {
         'Content-Type': 'application/json'
     }
 };
+
+
+// <----------- Set the colors of the site ----------->
+
 
 // Use the color provided to set the colors on the correct DOM elements
 function setColor(color, pos) {
@@ -94,7 +104,10 @@ function textColor(color, pos) {
     }
 }
 
-// ------------- Stuff to do when the user changes the hex value --------------
+
+// <----------- Stuff to do when the user changes the hex value ----------->
+
+
 function changeHex(cardNum) {
     // This var is set up to check each letter in the inputted hex to see if its valid
     var hexTest = /^([0-9A-F]{1}){1,6}$/i;
@@ -147,7 +160,9 @@ function lockCard(card) {
 }
 
 
-// functions that will be availble from outside
+// <----------- functions that will be availble from outside ----------->
+
+
 export const colorMixin = {
     methods: {
         // Get colors from Huemint and the set the colors on the site
@@ -175,20 +190,24 @@ export const colorMixin = {
                 console.log(error);
             });
         },
+
         // When moving between pages, refresh is needed to set the colors up again
         refresh() {
             for (var i in results) {
                 setColor(results[i], i);
             }
         },
+
         // Lock or unlock the selected color in the palette
         lock(pos) {
             lockCard(pos);
         },
+
         // When someone edits the hex, run some checks and set it if right
         hexChange(card) {
             changeHex(card);
         },
+
         // Copy the selected hex value to the user's clipboard
         toClipboard(card) {
             navigator.clipboard.writeText(results[card-1]);
@@ -202,11 +221,13 @@ export const colorMixin = {
             // After 3 seconds, remove the show class from DIV
             setTimeout(function(){ toast.classList.remove("show"); }, 2000);
         },
+
         // When button is hovered, set it's background to what is provided
         btnHovered(btnId, color) {
             var btn = document.getElementById(btnId);
             btn.style.backgroundColor = results[color-1];
         },
+
         // When button is unhovered, set it's background color to transparent
         btnUnhovered(btnId) {
             var btn = document.getElementById(btnId);

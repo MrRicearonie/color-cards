@@ -2,6 +2,7 @@
     to get the cards setup process started */
 
 @import 'settings.variables';
+// @import 'mobileCards.content';
 @import 'card.content';
 
 // import and set font
@@ -13,7 +14,7 @@ body {
 
 /* Create the container for the cards to go into that is on the bottom. Center
     the cards */
-.color-card-container {
+#color-card-container {
     height: 3rem;
     width: 100%;
     display: flex;
@@ -24,6 +25,24 @@ body {
     bottom: 0;
     left: 0;
     // overflow-y: hidden;
+}
+
+.colorCard {
+    height: 13rem;
+    width: 10rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.color {
+    height: 4rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.color-card-content {
+    border-left: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
 }
 
 // Set up the cards based on what color they correlate to
@@ -52,6 +71,8 @@ body {
     transform: translateY(-10rem);
     box-shadow: 0 0 5px gray;
 }
+
+// <-------- Color Pallete generator button css -------->
 
 .color-button-container {
     height: 4rem;
@@ -96,6 +117,34 @@ body {
 
 .gen-btn:hover {
     background-color: rgb(70, 70, 70);
+}
+
+
+// <-------- Show colors mobile -------->
+
+
+.mobile-color-btn {
+    height: 4rem;
+    width: 3rem;
+    background-color: gray;
+    position: fixed;
+    bottom: 10px;
+    left: -1rem;
+    border: solid white 2px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: right;
+    transition: all 0.5s;
+    box-shadow: 0 0 5px gray;
+    text-align: right;
+    visibility: hidden;
+}
+
+#arrow-cards {
+    margin-right: 4px;
 }
 
 // Animate a button when it is clicked
@@ -218,5 +267,53 @@ body {
 @keyframes fadeout {
     from {bottom: 6rem; opacity: 1;}
     to {bottom: 0; opacity: 0;}
+}
+
+// <-------- Set up the cards for mobile devices -------->
+
+@media screen and (max-width: 768px) {
+    .mobile-hide {
+        // right: -100vw;
+    }
+
+    .mobile-show {
+        transform: translateX(100vw);
+    }
+
+    #color-card-container {
+        height: fit-content;
+        flex-direction: column;
+        gap: 0;
+        top: 0;
+        left: -100vw;
+        transition: all 0.5s;
+    }
+
+    .colorCard {
+        display: flex;
+        width: 100vw;
+        height: 17.7vh;
+        border-radius: 0;
+    }
+    .color {
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .color-card-content {
+        justify-content: center;
+    }
+
+    .hex {
+        margin: 0;
+    }
+
+    .color-button-container {
+        bottom: 10px;
+    }
+
+    .mobile-color-btn {
+        visibility: visible;
+    }
 }
   
