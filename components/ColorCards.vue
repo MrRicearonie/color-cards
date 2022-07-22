@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="color-card-container" class="mobile-hide">
+        <div id="color-card-container">
             <section class="colorCard down" id="card1">
                 <div class="color background_color1 card-background"></div>
                 <div class="color-card-content">
@@ -27,7 +27,7 @@
             </section>
             <section class="colorCard down" id="card3">
                 <div class="color background_color3 card-background"></div>
-                    <div class="color-card-content">
+                <div class="color-card-content">
                     <p class="hex">{{ hexStart }}<input id="hex_card3" type="text" v-model="hex3" /></p>
                     <div class="button-bottom button-bottom-ani background_color3" @click="toClipboard(3)">
                         <div class="button-top button-top-ani copy">{{ c }}</div>
@@ -39,7 +39,7 @@
             </section>
             <section class="colorCard down" id="card4">
                 <div class="color background_color4 card-background"></div>
-                    <div class="color-card-content">
+                <div class="color-card-content">
                     <p class="hex">{{ hexStart }}<input id="hex_card4" type="text" v-model="hex4" /></p>
                     <div class="button-bottom button-bottom-ani background_color4" @click="toClipboard(4)">
                         <div class="button-top button-top-ani copy">{{ c }}</div>
@@ -51,7 +51,7 @@
             </section>
             <section class="colorCard down" id="card5">
                 <div class="color background_color5 card-background"></div>
-                    <div class="color-card-content">
+                <div class="color-card-content">
                     <p class="hex">{{ hexStart }}<input id="hex_card5" type="text" v-model="hex5" /></p>
                     <div class="button-bottom button-bottom-ani background_color5" @click="toClipboard(5)">
                         <div class="button-top button-top-ani copy">{{ c }}</div>
@@ -129,24 +129,25 @@
                 }
             })
 
-            // When someone clicks on the color card, open or close it
+            // When someone clicks on the color card, open or close it on desktop
             for (const background of backgrounds) {
                 background.addEventListener('click', function handleClick(event) {
+                    if (window.innerWidth > 768) {
+                        // Get the card id
+                        var parent = event.target.parentNode.id;
 
-                    // Get the card id
-                    var parent = event.target.parentNode.id;
+                        // If there is a card open (or the generate button), close it
+                        if (currentCard != '') {
+                            (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
+                        }
 
-                    // If there is a card open (or the generate button), close it
-                    if (currentCard != '') {
-                        (currentCard != 'gen-container') ? document.getElementById(currentCard).classList.remove('show-card') : gen.classList.remove('show-color-button-container'), arrow.classList.remove('arrow-flip');
-                    }
-
-                    // If the currentCard is the parent, set it to nothing, else open the parent card
-                    if (currentCard == parent) {
-                        currentCard = '';
-                    } else {
-                        currentCard = parent;
-                        document.getElementById(currentCard).classList.add('show-card');
+                        // If the currentCard is the parent, set it to nothing, else open the parent card
+                        if (currentCard == parent) {
+                            currentCard = '';
+                        } else {
+                            currentCard = parent;
+                            document.getElementById(currentCard).classList.add('show-card');
+                        }
                     }
                 });
             };

@@ -36,6 +36,7 @@ body {
 
 .color {
     height: 4rem;
+    width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -272,10 +273,6 @@ body {
 // <-------- Set up the cards for mobile devices -------->
 
 @media screen and (max-width: 768px) {
-    .mobile-hide {
-        // right: -100vw;
-    }
-
     .mobile-show {
         transform: translateX(100vw);
     }
@@ -298,6 +295,7 @@ body {
     .color {
         height: 100%;
         border-radius: 0;
+        width: 70%;
     }
 
     .color-card-content {
