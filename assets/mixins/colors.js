@@ -201,6 +201,16 @@ export const colorMixin = {
 
             // After 3 seconds, remove the show class from DIV
             setTimeout(function(){ toast.classList.remove("show"); }, 2000);
+        },
+        // When button is hovered, set it's background to what is provided
+        btnHovered(btnId, color) {
+            var btn = document.getElementById(btnId);
+            btn.style.backgroundColor = results[color-1];
+        },
+        // When button is unhovered, set it's background color to transparent
+        btnUnhovered(btnId) {
+            var btn = document.getElementById(btnId);
+            btn.style.backgroundColor = 'transparent';
         }
     }
 }

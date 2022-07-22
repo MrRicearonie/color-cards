@@ -7,18 +7,11 @@
             <hr class="my-4 color5">
             <p class="primary_text_color2">{{ jumbotronText }}</p>
             <div class="btnContainer">
-                <!-- <b-button size="lg" href="#" class="homeBtn text_color1 border_color1" id="button-1" @mouseover="hover1 = true" @mouseleave="hover1 = false" :class="{ background_color1: hover1 }" @click="btnClicked = !btnClicked">{{ btnPersonal }}</b-button> -->
-                <a id="button-1" role="button" tabindex="0" href="#" target="_self" class="btn homeBtn text_color3 border_color3 btn-lg" @mouseover="hover1 = true" @mouseleave="hover1 = false" :class="{ background_color1: hover1, background_transparent: !hover1 }" @click="btnClicked = !btnClicked">{{ btnPersonal }}</a>
-                <a id="button-2" role="button" tabindex="0" href="#" target="_self" class="btn homeBtn text_color4 border_color4 btn-lg" @mouseover="hover2 = true" @mouseleave="hover2 = false" :class="{ background_color2: hover2, background_transparent: !hover2 }" @click="btnClicked = !btnClicked">{{ btnShop }}</a>
-                <a id="button-3" role="button" tabindex="0" href="#" target="_self" class="btn homeBtn text_color5 border_color5 btn-lg" @mouseover="hover3 = true" @mouseleave="hover3 = false" :class="{ background_color3: hover3, background_transparent: !hover3 }" @click="btnClicked = !btnClicked">{{ btnBlog }}</a>
+                <nuxt-link to="/personal" id="button-1" role="button" tabindex="0" class="nav-link btn homeBtn text_color3 border_color3 btn-lg" @mouseover.native="btnHovered('button-1', '3')" @mouseleave.native="btnUnhovered('button-1')">{{ btnPersonal }}</nuxt-link>
+                <nuxt-link to="/shop" id="button-2" role="button" tabindex="0" class="nav-link btn homeBtn text_color4 border_color4 btn-lg" @mouseover.native="btnHovered('button-2', '4')" @mouseleave.native="btnUnhovered('button-2')">{{ btnShop }}</nuxt-link>
+                <nuxt-link to="/blog" id="button-3" role="button" tabindex="0" class="nav-link btn homeBtn text_color5 border_color5 btn-lg" @mouseover.native="btnHovered('button-3', '5')" @mouseleave.native="btnUnhovered('button-3')">{{ btnBlog }}</nuxt-link>
             </div>
         </b-jumbotron>
-        <!-- Show an alert if the user clicks the button -->
-        <b-alert show variant="danger" v-if = "btnClicked">{{ alert }}</b-alert>
-        <p v-else>{{ placeholder }}</p>
-        <b-tooltip target="button-1" placement="bottom">{{ tooltipText }} <span class="text_color3">{{ colorText }}</span></b-tooltip>
-        <b-tooltip target="button-2" placement="bottom">{{ tooltipText }} <span class="text_color4">{{ colorText }}</span></b-tooltip>
-        <b-tooltip target="button-3" placement="bottom">{{ tooltipText }} <span class="text_color5">{{ colorText }}</span></b-tooltip>
     </div>
 </template>
 
@@ -36,12 +29,6 @@
                 btnShop: "Shop",
                 btnBlog: "Blog",
                 tooltipText: "Let's find those",
-                btnClicked: false,
-                alert: 'The site is currently being constructed. Sorry for the inconvenience',
-                placeholder: 'Use links in navbar for now',
-                hover1: false,
-                hover2: false,
-                hover3: false
             };
         },
         mounted () {
