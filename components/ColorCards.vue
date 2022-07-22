@@ -129,7 +129,7 @@
                 }
             })
 
-            // When someone clicks on the color card, open or close it on desktop
+            // When someone clicks on the color card, open or close it if not on mobile
             for (const background of backgrounds) {
                 background.addEventListener('click', function handleClick(event) {
                     if (window.innerWidth > 768) {

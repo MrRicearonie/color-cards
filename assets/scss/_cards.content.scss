@@ -44,6 +44,15 @@ body {
 .color-card-content {
     border-left: 2px solid whitesmoke;
     border-right: 2px solid whitesmoke;
+    flex-direction: column;
+}
+
+.button-top {
+    width: 100%;
+}
+
+.button-bottom {
+    width: 75%;
 }
 
 // Set up the cards based on what color they correlate to
@@ -312,6 +321,21 @@ body {
 
     .mobile-color-btn {
         visibility: visible;
+    }
+}
+
+@media screen and (max-width: 768px) and (max-height: 667px) {
+    .color-card-content {
+        flex-direction: row;
+    }
+    .color {
+        width: 15%;
+    }
+    .color-card-content {
+        width: 100%;
+    }
+    .button-bottom {
+        width: 50%;
     }
 }
   
