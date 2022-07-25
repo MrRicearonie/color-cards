@@ -1,8 +1,8 @@
 <!-- Used to be ShopContent -->
 <template>
-    <div>
-        <div class="text-center my-5">
-            <h1 class="display-4 text-secondary">{{ title }}</h1>
+    <div class="background_color1">
+        <div class="text-center title">
+            <h1 class="display-4 text_color2">{{ title }}</h1>
         </div>
 
         <!-- Create a carousel for the images -->
@@ -27,6 +27,7 @@
                     :img_alt="itemList.img_alt"
                     :title="itemList.title"
                     :desc="itemList.desc"
+                    :btn_id="itemList.btn_id"
                     :btn_text="itemList.btn_text"
                 />
             </b-row>
@@ -69,7 +70,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-1",
+                        btn_text_more: "About"
                     },
                     {
                         img_src: require('@/assets/RockPile.jpg'),
@@ -77,7 +79,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-2",
+                        btn_text_more: "About"
                     },
                     {
                         img_src: require('@/assets/RockPile.jpg'),
@@ -85,7 +88,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-3",
+                        btn_text_more: "About"
                     },
                     {
                         img_src: require('@/assets/RockPile.jpg'),
@@ -93,7 +97,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-4",
+                        btn_text_more: "About"
                     },
                     {
                         img_src: require('@/assets/RockPile.jpg'),
@@ -101,7 +106,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-5",
+                        btn_text_more: "About"
                     },
                     {
                         img_src: require('@/assets/RockPile.jpg'),
@@ -109,7 +115,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-6",
+                        btn_text_more: "About"
                     },
                     {
                         img_src: require('@/assets/RockPile.jpg'),
@@ -117,7 +124,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-7",
+                        btn_text_more: "About"
                     },
                     {
                         img_src: require('@/assets/RockPile.jpg'),
@@ -125,7 +133,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-8",
+                        btn_text_more: "About"
                     },
                     {
                         img_src: require('@/assets/RockPile.jpg'),
@@ -133,7 +142,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-9",
+                        btn_text_more: "About"
                     },
                     {
                         img_src: require('@/assets/RockPile.jpg'),
@@ -141,7 +151,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-10",
+                        btn_text_more: "About"
                     },
                     {
                         img_src: require('@/assets/RockPile.jpg'),
@@ -149,7 +160,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-11",
+                        btn_text_more: "About"
                     },
                     {
                         img_src: require('@/assets/RockPile.jpg'),
@@ -157,7 +169,8 @@
                         title: "testing",
                         desc: "This is a test",
                         btn_text_buy: "Buy",
-                        btn_text_more: "Border"
+                        btn_id: "shop-btn-12",
+                        btn_text_more: "About"
                     },
                 ]
             };
@@ -168,7 +181,10 @@
     };
 </script>
 
-<style>
+<style lang="scss">
+    .title {
+        padding: 3rem 0;
+    }
     .carousel {
         padding-bottom: 3rem;
     }

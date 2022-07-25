@@ -9,14 +9,14 @@
         :img-alt="itemList.img_alt"
         img-top
         tag="article"
-        class="mb-4"
+        class="mb-4 background_color5 text_color2"
         :class="{ boldBorder: showBorder }"
       >
-        <b-card-text>{{ itemList.desc }}</b-card-text>
+        <b-card-text class="primary_text_color5">{{ itemList.desc }}</b-card-text>
         <!-- add click event to a button -->
         <div class="btnContainer">
-            <b-button href="#" variant="primary">{{ itemList.btn_text_buy }}</b-button>
-            <b-button  @click="toggleBorder()" href="#" variant="outline-primary">{{ itemList.btn_text_more }}</b-button>
+            <b-button href="#" variant="primary" class="background_color3 border_color3">{{ itemList.btn_text_buy }}</b-button>
+            <b-button :id="itemList.btn_id" @click="toggleBorder()" href="#" variant="outline-primary" class="border_color2 text_color2" @mouseover.native="btnHovered(itemList.btn_id, '2')" @mouseleave.native="btnUnhovered(itemList.btn_id)">{{ itemList.btn_text_more }}</b-button>
         </div>
       </b-card>
     </b-card-group>
@@ -25,9 +25,10 @@
 
 <script>
 import { borderMixin } from "../assets/mixins/border.js";
+import { colorMixin } from "../assets/mixins/colors.js";
 
 export default {
-  mixins: [borderMixin],
+  mixins: [borderMixin, colorMixin],
   name: "item-card",
 
   // props and validation for the shopping cards
@@ -40,6 +41,11 @@ export default {
       type: String,
       required: true,
       default: "Product Name",
+    },
+    btn_id: {
+      type: String,
+      required: true,
+      default: "shop-btn-1",
     },
     desc: {
       type: String,

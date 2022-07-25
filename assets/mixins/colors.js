@@ -225,6 +225,7 @@ export const colorMixin = {
         // When button is hovered, set it's background to what is provided
         btnHovered(btnId, color) {
             var btn = document.getElementById(btnId);
+            console.log("Id: " + btnId + ", and it's return: " + btn);
             btn.style.backgroundColor = results[color-1];
         },
 
