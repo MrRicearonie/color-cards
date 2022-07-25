@@ -56,7 +56,7 @@
     }
 
     .tall {
-        height: calc(100vh - 11rem);
+        min-height: calc(100vh - 11rem);
     }
 
 </style>
