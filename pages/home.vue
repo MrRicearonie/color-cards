@@ -59,4 +59,8 @@
         min-height: calc(100vh - 11rem);
     }
 
+    .jumbotron {
+        margin-bottom: 0;
+    }
+
 </style>
