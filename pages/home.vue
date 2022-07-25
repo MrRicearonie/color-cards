@@ -1,9 +1,9 @@
 <template>
-    <div class="background_color1">
+    <div class="background_color1 tall">
         <!-- Create the jumbotron -->
         <b-jumbotron header-level="3" variant="text-center rounded-lg" class="background_color2">
-            <template #header>{{ headerText }}<span class="text_color4">{{ colorText }}</span></template>
-            <template #lead class="text_color4">{{ leadText}} </template>
+            <template #header><span class="text_color1">{{ headerText }}</span><span class="text_color4">{{ colorText }}</span></template>
+            <template #lead><span class="text_color1">{{ leadText }}</span></template>
             <hr class="my-4 color5">
             <p class="primary_text_color2">{{ jumbotronText }}</p>
             <p class="primary_text_color2">{{ jumbotronText2 }}</p>
@@ -53,6 +53,10 @@
     .btn:hover {
         color: white !important;
         border-color: white !important;
+    }
+
+    .tall {
+        height: calc(100vh - 11rem);
     }
 
 </style>

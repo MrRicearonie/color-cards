@@ -63,14 +63,14 @@
             </section>
         </div>
         <div id="gen-container" class="color-button-container">
-            <p id="arrow-gen" class="arrow">&lt</p>
-            <div class="gen-btn" @click="getColors()">Generate</div>
+            <p id="arrow-gen" class="arrow">{{ leftArrow }}</p>
+            <div class="gen-btn" @click="getColors()">{{ gen }}</div>
         </div>
         <div id="show-cards" class="mobile-color-btn">
-            <p id="arrow-cards" class="arrow">&gt</p>
+            <p id="arrow-cards" class="arrow">{{ rightArrow }}</p>
         </div>
         <div id="copy_toast">
-            Hex value copied to clipboard
+            {{ toast }}
         </div>
     </div>
 </template>
@@ -90,6 +90,10 @@
                 hexStart: '#',
                 c: 'copy',
                 l: 'lock',
+                gen: 'Generate',
+                leftArrow: '<',
+                rightArrow: '>',
+                toast: 'Hex value copied to clipboard',
             }
         }, mounted() {
             var currentCard = '';

@@ -3,6 +3,7 @@
     <NavBar />
     <Nuxt />
     <ColorCards/>
+    <Footer />
   </div>
 </template>
 
