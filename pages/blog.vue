@@ -1,25 +1,27 @@
 <!-- Used to be called AccordionContent -->
 <template>
-    <b-container>
-        <div class="text-center my-5">
-            <h1 class="display-4 text-secondary">{{ pageTitle }}</h1>
-        </div>
-        <div class="accordion" role="tablist">
-            <!-- Go through each of the posts and add them to the accordion -->
-            <BlogPost
-                v-for="(post, index) in blogPosts"
-                :key = "index"
-                :post = "post"
-                :id = "post.id"
-                :title = "post.title"
-                :text = "post.text"
-                :first = "post.first"
-                :padding = "post.padding"
-                :imgSrc = "post.imgSrc"
-                :imgAlt = "post.imgAlt"
-            />
-        </div>
-    </b-container>
+    <div class="full-height background_color5">
+        <b-container>
+            <div class="text-center title">
+                <h1 class="display-4 text_color2">{{ pageTitle }}</h1>
+            </div>
+            <div class="accordion" role="tablist">
+                <!-- Go through each of the posts and add them to the accordion -->
+                <BlogPost
+                    v-for="(post, index) in blogPosts"
+                    :key = "index"
+                    :post = "post"
+                    :id = "post.id"
+                    :title = "post.title"
+                    :text = "post.text"
+                    :first = "post.first"
+                    :padding = "post.padding"
+                    :imgSrc = "post.imgSrc"
+                    :imgAlt = "post.imgAlt"
+                />
+            </div>
+        </b-container>
+    </div>
 </template>
 
 <script>
@@ -30,7 +32,7 @@
         components: { BlogPost },
         data() {
             return {
-                pageTitle: 'Major Operating Systems',
+                pageTitle: 'Blog',
                 blogPosts: [
                     {
                         id: 1,
@@ -76,3 +78,12 @@
         }
     }
 </script>
+
+<style lang="scss">
+    .full-height {
+        min-height: calc(100vh - 11rem);
+    }
+    .title {
+        padding: 3rem 0;
+    }
+</style>
