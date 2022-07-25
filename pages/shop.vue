@@ -43,7 +43,7 @@
         components: { ShoppingCard },
         data: () => {
             return {
-                title: 'Responsive Images',
+                title: 'Welcome to our Shop',
                 carouselImages: [
                     {
                         title: 'Basement',
