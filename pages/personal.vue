@@ -1,6 +1,6 @@
 <!-- Used to be called GridContent -->
 <template>
-    <div class="background_color1">
+    <div class="background_color1 main-container">
         <b-container class="full-height">
             <b-row class="full-height">
                 <b-col cols="12" md="5" lg="4" xl="3" class="photo-container">
@@ -9,14 +9,27 @@
                     </div>
                 </b-col>
                 <b-col cols="12" md="7" lg="8" xl="9" class="text-container">
-                    <div class="text-center my-5">
-                        <h1 class="display-4 text_color4">{{ pageWelcome }} <span class="text_color2">{{ name }}</span></h1>
+                    <div>
+                        <div class="text-center welcome">
+                            <h1 class="display-4 text_color4">{{ pageWelcome }} <span class="text_color2">{{ name }}</span></h1>
+                        </div>
+                        <p class="primary_text_color1">{{ welcomeText }}</p>
                     </div>
-                    <p class="primary_text_color1">{{ welcomeText }}</p>
-                    <h2 class="text_color2">{{ about }}</h2>
-                    <p class="primary_text_color1">{{ aboutText }}</p>
-                    <p class="primary_text_color1">{{ aboutText2 }}</p>
-                    <h2 class="text_color2">{{ contact }}</h2>
+                    <div>
+                        <h2 class="text_color2">{{ about }}</h2>
+                        <p class="primary_text_color1">{{ aboutText }}</p>
+                        <p class="primary_text_color1">{{ aboutText2 }}</p>
+                    </div>
+                    <div>
+                        <h2 class="text_color2">{{ contact }}</h2>
+                        <div class="icon-container">
+                            <font-awesome-icon :icon="['fab', 'twitter']" class="text_color4 icon"/>
+                            <font-awesome-icon :icon="['fab', 'linkedin']" class="text_color4 icon"/>
+                            <font-awesome-icon :icon="['fab', 'github']" class="text_color4 icon"/>
+                            <font-awesome-icon :icon="['fab', 'instagram']" class="text_color4 icon"/>
+                            <font-awesome-icon :icon="['fab', 'dribbble']" class="text_color4 icon"/>
+                        </div>
+                    </div>
                 </b-col>
             </b-row>
         </b-container>
@@ -53,8 +66,12 @@
         color: $textlight
     }
 
+    .main-container {
+        padding-bottom: 2rem;
+    }
+
     .full-height {
-        min-height: 100vh;
+        min-height: calc(100vh - 11rem);
     }
 
     .img-background {
@@ -62,21 +79,39 @@
         border-radius: 100%;
     }
 
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .welcome {
+        margin-top: 3rem;
+    }
+
     .photo-container {
-        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .icon-container {
+        font-size: 2rem;
+    }
+    
+    .icon {
+        margin: 0 1rem;
     }
 
     $breakpoint-tablet: 768px;
     @media (max-width: $breakpoint-tablet) {
         .photo-container {
             height: 30vh;
-        } 
+        }
 
-        .person {
-            height: 27.5vh;
+        .img-background {
+            width: 30vh;
         }
     }
 </style>
