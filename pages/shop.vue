@@ -67,8 +67,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-1",
                         btn_text_more: "About"
@@ -76,8 +76,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-2",
                         btn_text_more: "About"
@@ -85,8 +85,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-3",
                         btn_text_more: "About"
@@ -94,8 +94,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-4",
                         btn_text_more: "About"
@@ -103,8 +103,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-5",
                         btn_text_more: "About"
@@ -112,8 +112,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-6",
                         btn_text_more: "About"
@@ -121,8 +121,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-7",
                         btn_text_more: "About"
@@ -130,8 +130,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-8",
                         btn_text_more: "About"
@@ -139,8 +139,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-9",
                         btn_text_more: "About"
@@ -148,8 +148,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-10",
                         btn_text_more: "About"
@@ -157,8 +157,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-11",
                         btn_text_more: "About"
@@ -166,8 +166,8 @@
                     {
                         img_src: require('@/assets/RockPile.jpg'),
                         img_alt: "test test",
-                        title: "testing",
-                        desc: "This is a test",
+                        title: "Product",
+                        desc: "Your Product Info Here!",
                         btn_text_buy: "Buy",
                         btn_id: "shop-btn-12",
                         btn_text_more: "About"
