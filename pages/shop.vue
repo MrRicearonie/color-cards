@@ -47,17 +47,17 @@
                 carouselImages: [
                     {
                         title: 'Basement',
-                        src: require('@/assets/TheBasementTest.jpg'),
+                        src: require('@/assets/TheBasement.jpg'),
                         alt: "A basement of an abandoned building covered in graffiti"
                     },
                     {
                         title: 'Beach',
-                        src: require('@/assets/RubyBeachTest.jpg'),
+                        src: require('@/assets/RubyBeach.jpg'),
                         alt: "Sunset over the ocean from a beach with a tall island"
                     },
                     {
                         title: 'Moss',
-                        src: require('@/assets/MossRockGrassTest.jpg'),
+                        src: require('@/assets/MossRockGrass.jpg'),
                         alt: "A rock covered in moss"
                     },
                 ],
