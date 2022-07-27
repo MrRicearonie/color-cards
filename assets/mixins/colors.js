@@ -7,10 +7,10 @@ import axios from "axios";
 
 
 // Variables to hold the hex on each card
-var hexes = ['11323b', '266363', '444543', 'd1b47c', 'dfd8b3'];
+var hexes = ['fffeff', '38322f', 'd14c52', 'dcaa9a', 'e0cecf'];
 
 // The current pallete and which ones we like
-var results = ["#11323b", "#266363", "#444543", "#d1b47c", "#dfd8b3"];
+var results = ["#fffeff", "#38322f", "#d14c52", "#dcaa9a", "#e0cecf"];
 var locked = [false, false, false, false, false];
 
 // Stuff to call the api with

@@ -95,6 +95,9 @@
     .title {
         padding: 3rem 0;
     }
+    .mainPost {
+        margin-bottom: 2rem;
+    }
     .textLeft {
         text-align: left;
     }

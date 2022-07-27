@@ -82,11 +82,11 @@
         mixins: [colorMixin],
         data() {
             return {
-                hex1: '11323b',
-                hex2: '266363',
-                hex3: '444543',
-                hex4: 'd1b47c',
-                hex5: 'dfd8b3',
+                hex1: 'fffeff',
+                hex2: '38322f',
+                hex3: 'd14c52',
+                hex4: 'dcaa9a',
+                hex5: 'e0cecf',
                 hexStart: '#',
                 c: 'copy',
                 l: 'lock',
