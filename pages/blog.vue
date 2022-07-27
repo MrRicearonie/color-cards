@@ -11,7 +11,7 @@
                     <h2 class="text_color3">{{ mainPost.title }}</h2>
                     <p class="primary_text_color1">{{ mainPost.text }}</p>
                     <div class="textRight">
-                        <a href="#" class="text_color4">{{ readMore }}</a>
+                        <a href="#" class="text_color4" @click="readMoreAlert()">{{ readMore }}</a>
                     </div>
                 </b-col>
                 <b-col cols="12" lg="5">
@@ -34,8 +34,9 @@
 <script>
     import BlogPostPreview from "../components/BlogPosts";
     import { colorMixin } from "../assets/mixins/colors.js";
+    import { blogMixin } from "../assets/mixins/blog.js";
     export default {
-        mixins: [colorMixin],
+        mixins: [colorMixin, blogMixin],
         components: { BlogPostPreview },
         data() {
             return {

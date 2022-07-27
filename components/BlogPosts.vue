@@ -12,7 +12,7 @@
                 <h4 class="text_color2">{{ post.title }}</h4>
                 <p class="primary_text_color1">{{ post.text }}</p>
                 <div class="textRight">
-                    <a href="#" class="text_color4">{{ readMore }}</a>
+                    <a href="#" class="text_color4" @click="readMoreAlert()">{{ readMore }}</a>
                 </div>
             </b-col>
         </b-row>
@@ -20,7 +20,11 @@
 </template>
 
 <script>
+    import { blogMixin } from "../assets/mixins/blog.js";
+
     export default {
+        mixins: [blogMixin],
+
         data() {
             return {
                 readMore: 'Read More >>',

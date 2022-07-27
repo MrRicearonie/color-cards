@@ -15,8 +15,8 @@
         <b-card-text class="primary_text_color5">{{ itemList.desc }}</b-card-text>
         <!-- add click event to a button -->
         <div class="btnContainer">
-            <b-button href="#" variant="primary" class="background_color3 border_color3">{{ itemList.btn_text_buy }}</b-button>
-            <b-button :id="itemList.btn_id" @click="toggleBorder()" href="#" variant="outline-primary" class="border_color2 text_color2" @mouseover.native="btnHovered(itemList.btn_id, '2')" @mouseleave.native="btnUnhovered(itemList.btn_id)">{{ itemList.btn_text_more }}</b-button>
+            <b-button @click="buyClicked()" href="#" variant="primary" class="background_color3 border_color3">{{ itemList.btn_text_buy }}</b-button>
+            <b-button :id="itemList.btn_id" @click="aboutClicked()" href="#" variant="outline-primary" class="border_color2 text_color2" @mouseover.native="btnHovered(itemList.btn_id, '2')" @mouseleave.native="btnUnhovered(itemList.btn_id)">{{ itemList.btn_text_more }}</b-button>
         </div>
       </b-card>
     </b-card-group>
@@ -24,11 +24,11 @@
 </template>
 
 <script>
-import { borderMixin } from "../assets/mixins/border.js";
+import { shopMixin } from "../assets/mixins/shop.js";
 import { colorMixin } from "../assets/mixins/colors.js";
 
 export default {
-  mixins: [borderMixin, colorMixin],
+  mixins: [shopMixin, colorMixin],
   name: "item-card",
 
   // props and validation for the shopping cards
