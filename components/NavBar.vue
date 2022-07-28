@@ -1,3 +1,5 @@
+<!-- Christopher Rempe, 2022 -->
+<!-- The navbar for the site -->
 <template class="background_color1">
     <!-- Set up the navbar with the primary color -->
     <b-navbar toggleable="sm" type="dark" id="navbar" class="navbar background_color1">

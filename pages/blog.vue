@@ -1,4 +1,5 @@
-<!-- Used to be called AccordionContent -->
+<!-- Christopher Rempe, 2022 -->
+<!-- This is to give a blog site example. Have an artile on the left (or top on mobile) and previews on the right -->
 <template>
     <div class="full-height background_color1">
         <b-container>
@@ -6,6 +7,7 @@
                 <h1 class="display-4 text_color2">{{ pageTitle }}</h1>
             </div>
             <b-row>
+                <!-- The main article on the left/top -->
                 <b-col cols="12" lg="7" class="mainPost textLeft">
                     <b-img :src="mainPost.imgSrc" :alt="mainPost.imgAlt" fluid></b-img>
                     <h2 class="text_color3">{{ mainPost.title }}</h2>
@@ -14,6 +16,7 @@
                         <a href="#" class="text_color4" @click="readMoreAlert()">{{ readMore }}</a>
                     </div>
                 </b-col>
+                <!-- Generate previews -->
                 <b-col cols="12" lg="5">
                     <BlogPostPreview
                     v-for="(post, index) in blogPosts"
@@ -77,6 +80,7 @@
             }
         },
         mounted () {
+            // Call refresh to get the appropriate colors on the page
             this.refresh();
         }
     }

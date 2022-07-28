@@ -1,4 +1,5 @@
-<!-- Used to be called GridContent -->
+<!-- Christopher Rempe, 2022 -->
+<!-- A page to show a personal website. For desktop have image on the left, and content on the right. Mobile, image on top -->
 <template>
     <div class="background_color1 main-container">
         <b-container class="full-height">
@@ -15,6 +16,7 @@
                         </div>
                         <p class="primary_text_color1">{{ welcomeText }}</p>
                     </div>
+                    <!-- About the person -->
                     <div>
                         <h2 class="text_color2">{{ about }}</h2>
                         <p class="primary_text_color1">{{ aboutText }}</p>
@@ -22,6 +24,7 @@
                     </div>
                     <div>
                         <h2 class="text_color2">{{ contact }}</h2>
+                        <!-- Show contact icons -->
                         <div class="icon-container">
                             <font-awesome-icon :icon="['fab', 'twitter']" class="text_color4 icon"/>
                             <font-awesome-icon :icon="['fab', 'linkedin']" class="text_color4 icon"/>
@@ -54,6 +57,7 @@
             }
         },
         mounted () {
+            // Call refresh to get the appropriate colors on the page
             this.refresh();
         }
     }

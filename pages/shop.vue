@@ -1,4 +1,5 @@
-<!-- Used to be ShopContent -->
+<!-- Christopher Rempe, 2022 -->
+<!-- This is an example of a shopify type site. Have a photobar on top, with shopping cards below -->
 <template>
     <div class="background_color1">
         <div class="text-center title">
@@ -176,6 +177,7 @@
             };
         },
         mounted () {
+            // Call refresh to get the appropriate colors on the page
             this.refresh();
         }
     };

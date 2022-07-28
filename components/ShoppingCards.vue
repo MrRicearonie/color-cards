@@ -1,3 +1,4 @@
+<!-- Christopher Rempe, 2022 -->
 <!-- This is the how the shopping cards will be layed out -->
 <template>
   <b-col xs="12" md="6" lg="4" xl="3">

@@ -1,3 +1,4 @@
+<!-- Christopher Rempe, 2022 -->
 <!-- This is how each blog post will be set up -->
 <template>
     <b-card

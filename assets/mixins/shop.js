@@ -1,3 +1,5 @@
+// Christopher Rempe, 2022
+// The js methods for the shopping page
 export const shopMixin = {
     methods: {
         // If someone clicks on buy, tell them this is just for color inspiration

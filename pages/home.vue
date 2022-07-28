@@ -1,3 +1,5 @@
+<!-- Christopher Rempe, 2022 -->
+<!-- The hompage for ColorCards. Let the user know what the site is about, and how to use it. -->
 <template>
     <div class="background_color1 tall">
         <!-- Create the jumbotron -->
@@ -34,6 +36,7 @@
             };
         },
         mounted () {
+            // Call refresh to get the appropriate colors on the page
             this.refresh();
         }
     };

@@ -1,3 +1,7 @@
+<!-- Christopher Rempe, 2022 -->
+<!-- Here are the cards about the colors. Show the color, the hex code which
+    the user can edit, a button to copy the hex value to clipboard, and a button
+    to lock in the color for the next generation -->
 <template>
     <div>
         <div id="color-card-container">
@@ -62,10 +66,12 @@
                 </div>
             </section>
         </div>
+        <!-- Button for generating the color palette. Hides on the right, click button to show -->
         <div id="gen-container" class="color-button-container">
             <p id="arrow-gen" class="arrow">{{ leftArrow }}</p>
             <div class="gen-btn" @click="getColors()">{{ gen }}</div>
         </div>
+        <!-- For mobile users, hide the cards on the left side with button to show them -->
         <div id="show-cards" class="mobile-color-btn">
             <p id="arrow-cards" class="arrow">{{ rightArrow }}</p>
         </div>
