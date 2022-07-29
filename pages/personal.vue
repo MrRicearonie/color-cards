@@ -59,12 +59,14 @@
         head() {
             return {
                 title: "Personal Example",
-                meta: {
-                    hid: 'description',
-                    name: 'description',
-                    content: 'An example of a personal website using the colors generated.'
-                }
-            }
+                meta: [
+                    {
+                        hid: 'description',
+                        name: 'description',
+                        content: 'An example of a personal website using the colors generated.'
+                    },
+                ],
+            };
         },
         mounted () {
             // Call refresh to get the appropriate colors on the page

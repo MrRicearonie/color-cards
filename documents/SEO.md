@@ -12,7 +12,7 @@ The more keywords we can get, the better. And by looking at other websites that 
 
 ### Site Reformatting
 
-Go through the site and look for better formatting possibilities. This could include more use of h tags, and updating h1 tags to include more searchable information.
+Go through the site and look for better formatting possibilities. This could include more use of h tags, and updating h1 tags to include more searchable information. This can also include code and content optimization, to increase the speed at which the site loads content, and thus increasing our SEO score.
 
 ### Google Analytics
 

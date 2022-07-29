@@ -39,11 +39,13 @@
           return {
             title: "Color Cards",
             // SEO Stuff
-            meta: {
-              hid: 'description',
-              name: 'description',
-              content: 'A nuxt web app that lets you find your next color palette for your project.'
-            }
+            meta: [
+              {
+                hid: 'description',
+                name: 'description',
+                content: 'A nuxt web app that lets you find your next color palette for your project.'
+              },
+            ],
           };
         },
         mounted () {
