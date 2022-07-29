@@ -8,8 +8,13 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: 'A nuxt web application to help find color palletes for web projects.' },
+      { name: 'format-detection', content: 'telephone=no' },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        keywords: 'color palette, color palettes, color pallete, colour pallete, colour, cards, dev, development, website example, website examples, nuxt web application, design',
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }

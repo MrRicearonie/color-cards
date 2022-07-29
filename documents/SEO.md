@@ -1,0 +1,2 @@
+# About SEO
+When it comes to getting eyes on your page, Search Engine Optimization (SEO) is one of the most important things to implement. When implemented properly, SEO techniques will boost your site on search engines like Google, and will increase organic traffic. Some of the things that will help increase your SEO includes keywords, properly formatting the website, and quality links to other sites.

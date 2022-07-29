@@ -79,6 +79,16 @@
                 ],
             }
         },
+        head() {
+            return {
+                title: "Blog Example",
+                meta: {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'A blog example to see how the generated color pallete will look.'
+                }
+            }
+        },
         mounted () {
             // Call refresh to get the appropriate colors on the page
             this.refresh();

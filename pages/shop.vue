@@ -176,6 +176,16 @@
                 ]
             };
         },
+        head() {
+            return {
+                title: "Shop Example",
+                meta: {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'An example of a store\'s shop using the generated color pallete.'
+                }
+            }
+        },
         mounted () {
             // Call refresh to get the appropriate colors on the page
             this.refresh();
