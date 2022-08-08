@@ -13,7 +13,7 @@ export default {
       {
         hid: 'keywords',
         name: 'keywords',
-        keywords: 'color palette, color palettes, color pallete, colour pallete, colour, cards, dev, development, website example, website examples, nuxt web application, design',
+        keywords: 'color palette, color palettes, color pallete, colour pallete, colour, cards, dev, development, website example, website examples, nuxt web application, design, web design, web dev',
       }
     ],
     link: [
